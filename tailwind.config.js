@@ -17,7 +17,7 @@ export default {
         gold: '#A98A5B',
       },
       fontFamily: {
-        display: ['Corinthia', 'cursive'],
+        display: ['Inter', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },

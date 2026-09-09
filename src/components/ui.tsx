@@ -76,7 +76,7 @@ export function SquareImage({
   );
 }
 
-/** Standard page opening: eyebrow, Corinthia title, intro copy, square image beside on desktop. */
+/** Standard page opening: eyebrow, title, intro copy, square image beside on desktop. */
 export function PageHero({
   title,
   intro,
