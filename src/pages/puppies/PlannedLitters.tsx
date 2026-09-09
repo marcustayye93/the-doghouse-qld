@@ -1,4 +1,4 @@
-import { usePageMeta, PageHero, ReadMore, CTAButton, PawDivider, SquareImage } from '../../components/ui';
+import { asset, usePageMeta, PageHero, ReadMore, CTAButton, PawDivider, SquareImage } from '../../components/ui';
 
 export default function PlannedLitters() {
   usePageMeta(
@@ -10,7 +10,7 @@ export default function PlannedLitters() {
       <PageHero
         title="Planned & Upcoming Litters"
         eyebrow="Puppies"
-        image="/images/photos/pup-sitting-3.jpg"
+        image={asset("/images/photos/pup-sitting-3.jpg")}
         imageAlt="Cavoodle puppy sitting"
         intro={
           <>
@@ -73,7 +73,7 @@ export default function PlannedLitters() {
           <div className="rounded-2xl border border-brand/15 bg-white p-8 text-center shadow-sm md:p-10">
             <div className="mx-auto max-w-sm">
               <SquareImage
-                src="/images/photos/basket-pups.jpg"
+                src={asset("/images/photos/basket-pups.jpg")}
                 alt="Basket of Cavoodle puppies"
               />
             </div>

@@ -1,4 +1,4 @@
-import { usePageMeta } from '../../components/ui';
+import { asset, usePageMeta } from '../../components/ui';
 import { CavoodleHero, CavoodleFooter } from './shared';
 
 export default function Theodore() {
@@ -10,7 +10,7 @@ export default function Theodore() {
     <>
       <CavoodleHero
         title="The Theodore"
-        image="/images/photos/pup-held-outdoors.jpg"
+        image={asset("/images/photos/pup-held-outdoors.jpg")}
         imageAlt="Puppy held outdoors"
         intro={
           <>

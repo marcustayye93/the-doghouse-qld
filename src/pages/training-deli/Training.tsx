@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { PageHero, ReadMore, usePageMeta } from '../../components/ui';
+import { asset, PageHero, ReadMore, usePageMeta } from '../../components/ui';
 import { CheckboxField, Field, FormShell, TextArea } from '../../components/forms';
 
 const ilink =
@@ -14,7 +14,7 @@ export default function Training() {
     <main>
       <PageHero
         title="Cavoodle Training"
-        image="/images/photos/pup-held-outdoors.jpg"
+        image={asset("/images/photos/pup-held-outdoors.jpg")}
         imageAlt="Cavoodle puppy held outdoors with a person"
         intro={
           <>

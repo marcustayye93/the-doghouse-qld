@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { siteConfig } from '../config';
 
 /** Sets document title + meta description (client-side; SSR uses route meta). */
+/** Prefix a public-dir path with the configured base URL so the site also works under a subpath. */
+export function asset(path: string): string {
+  const base = import.meta.env.BASE_URL || '/';
+  return base + path.replace(/^\//, '');
+}
+
 export function usePageMeta(title: string, description?: string) {
   useEffect(() => {
     document.title = `${title} | ${siteConfig.name}`;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
 
 export default function MatchingTemperament() {
   usePageMeta(
@@ -11,7 +11,7 @@ export default function MatchingTemperament() {
       <PageHero
         title="Puppy Matching & Temperament"
         eyebrow="Puppies"
-        image="/images/photos/pup-closeup.jpg"
+        image={asset("/images/photos/pup-closeup.jpg")}
         imageAlt="Close-up of a Cavoodle puppy"
         intro={
           <>

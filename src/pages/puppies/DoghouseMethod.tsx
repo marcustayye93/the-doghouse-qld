@@ -1,4 +1,4 @@
-import { usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
 
 export default function DoghouseMethod() {
   usePageMeta(
@@ -10,7 +10,7 @@ export default function DoghouseMethod() {
       <PageHero
         title="The Doghouse Method™"
         eyebrow="Puppies"
-        image="/images/photos/enrichment-ball-pit.jpg"
+        image={asset("/images/photos/enrichment-ball-pit.jpg")}
         imageAlt="Cavoodle puppy playing in a ball pit enrichment activity"
         intro={
           <>

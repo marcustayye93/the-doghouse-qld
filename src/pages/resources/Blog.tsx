@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PageHero, usePageMeta } from '../../components/ui';
+import { asset, PageHero, usePageMeta } from '../../components/ui';
 import { siteConfig } from '../../config';
 
 const ilink =
@@ -141,7 +141,7 @@ export default function Blog() {
       <PageHero
         title="Blog"
         eyebrow="Resources"
-        image="/images/photos/enrichment-ball-pit.jpg"
+        image={asset("/images/photos/enrichment-ball-pit.jpg")}
         imageAlt="Cavoodle puppy playing in a ball pit"
         intro={
           <>

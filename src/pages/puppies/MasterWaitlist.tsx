@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
 import { FormShell, Field, CheckboxField, RadioGroup } from '../../components/forms';
 
 /** CTAButton styling for links that include a hash anchor (native navigation). */
@@ -70,7 +70,7 @@ export default function MasterWaitlist() {
       <PageHero
         title="Master Waitlist"
         eyebrow="Puppies"
-        image="/images/photos/pup-grass.jpg"
+        image={asset("/images/photos/pup-grass.jpg")}
         imageAlt="Cavoodle puppy sitting in grass"
         intro={
           <>
@@ -292,7 +292,7 @@ export default function MasterWaitlist() {
             helps us begin considering whether one of our puppies may be the right fit.
           </p>
           <p>
-            <AnchorCTA href="/puppies/process-applying#doghouse-application">
+            <AnchorCTA href={asset("/puppies/process-applying#doghouse-application")}>
               Learn About Our Puppy Process &amp; Apply
             </AnchorCTA>
           </p>

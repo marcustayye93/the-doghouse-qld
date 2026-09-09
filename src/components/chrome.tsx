@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { navigation } from '../nav';
 import { siteConfig } from '../config';
+import { asset } from './ui';
 
 function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <Link to="/" aria-label="The Doghouse QLD - home" className="shrink-0">
       <img
-        src="/images/logo.png"
+        src={asset("/images/logo.png")}
         alt="The Doghouse QLD"
         className={compact ? 'h-12 w-auto' : 'h-14 w-auto md:h-16'}
       />
@@ -219,7 +220,7 @@ export function Footer() {
     <footer className="mt-16 bg-deep text-cream/90">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-2 lg:grid-cols-4 md:px-6">
         <div>
-          <img src="/images/logo.png" alt="The Doghouse QLD" className="h-16 w-auto" />
+          <img src={asset("/images/logo.png")} alt="The Doghouse QLD" className="h-16 w-auto" />
           <p className="mt-4 font-display text-2xl font-bold text-white">
             Thoughtfully bred. Beautifully raised.
           </p>

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { CTAButton, usePageMeta } from '../components/ui';
+import { asset, CTAButton, usePageMeta } from '../components/ui';
 
 export default function NotFound() {
   usePageMeta('Page not found', 'Oops... this page has wandered off!');
   return (
     <main className="mx-auto max-w-3xl px-5 py-16 text-center md:py-24">
       <img
-        src="/images/photos/pup-sitting-2.jpg"
+        src={asset("/images/photos/pup-sitting-2.jpg")}
         alt="Cavoodle puppy sitting"
         className="mx-auto aspect-square w-48 rounded-2xl object-cover shadow-md md:w-64"
       />

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { PageHero, usePageMeta } from '../../components/ui';
+import { asset, PageHero, usePageMeta } from '../../components/ui';
 
 const ilink =
   'font-semibold text-branddark underline decoration-brand/40 underline-offset-4 hover:decoration-brand';
@@ -1191,7 +1191,7 @@ export default function Faq() {
       <PageHero
         title="Frequently Asked Questions"
         eyebrow="Resources"
-        image="/images/photos/pup-sitting.jpg"
+        image={asset("/images/photos/pup-sitting.jpg")}
         imageAlt="Cavoodle puppy sitting"
         intro={
           <>

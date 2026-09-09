@@ -1,4 +1,4 @@
-import { PageHero, ReadMore, usePageMeta } from '../../components/ui';
+import { asset, PageHero, ReadMore, usePageMeta } from '../../components/ui';
 
 export default function OurStory() {
   usePageMeta(
@@ -11,7 +11,7 @@ export default function OurStory() {
       <PageHero
         title="Our Story"
         eyebrow="About Us"
-        image="/images/photos/our-story-charmaine-pups.jpg"
+        image={asset("/images/photos/our-story-charmaine-pups.jpg")}
         imageAlt="Charmaine with two Cavoodle puppies"
         intro={
           <ReadMore

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { usePageMeta, PageHero, CTAButton, PawDivider, SquareImage } from '../../components/ui';
+import { asset, usePageMeta, PageHero, CTAButton, PawDivider, SquareImage } from '../../components/ui';
 
 /** CTAButton styling for links that include a hash anchor (native navigation). */
 function AnchorCTA({ href, children }: { href: string; children: ReactNode }) {
@@ -24,7 +24,7 @@ export default function AvailablePuppies() {
       <PageHero
         title="Available Puppies"
         eyebrow="Puppies"
-        image="/images/photos/pup-yellow-bandana.jpg"
+        image={asset("/images/photos/pup-yellow-bandana.jpg")}
         imageAlt="Cavoodle puppy wearing a yellow bandana"
         intro={
           <>
@@ -55,7 +55,7 @@ export default function AvailablePuppies() {
           <h2>Meet Our Available Puppies</h2>
           <div className="rounded-2xl border border-brand/15 bg-white p-8 text-center shadow-sm md:p-10">
             <div className="mx-auto max-w-sm">
-              <SquareImage src="/images/photos/basket-pups.jpg" alt="Basket of Cavoodle puppies" />
+              <SquareImage src={asset("/images/photos/basket-pups.jpg")} alt="Basket of Cavoodle puppies" />
             </div>
             <h3 className="!mt-6 font-display !text-4xl font-bold text-deep">
               No Puppies Currently Available
@@ -99,7 +99,7 @@ export default function AvailablePuppies() {
             to do so when you enquire.
           </p>
           <p>
-            <AnchorCTA href="/puppies/process-applying#doghouse-application">
+            <AnchorCTA href={asset("/puppies/process-applying#doghouse-application")}>
               Apply for a Doghouse Puppy
             </AnchorCTA>
           </p>

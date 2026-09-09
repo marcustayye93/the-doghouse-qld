@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { usePageMeta, CTAButton, PawDivider, SquareImage } from '../../components/ui';
+import { asset, usePageMeta, CTAButton, PawDivider, SquareImage } from '../../components/ui';
 import { PhotoPlaceholder } from '../dogs/PhotoPlaceholder';
 
 const colourTiles = [
@@ -100,7 +100,7 @@ export default function AboutCavoodles() {
             </button>
           </div>
           <SquareImage
-            src="/images/photos/pup-closeup.jpg"
+            src={asset("/images/photos/pup-closeup.jpg")}
             alt="Cavoodle close-up portrait"
             eager
             className="shadow-lg"

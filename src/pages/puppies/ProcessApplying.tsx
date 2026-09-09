@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
 import {
   FormShell,
   Field,
@@ -74,7 +74,7 @@ export default function ProcessApplying() {
       <PageHero
         title="Puppy Process & Applying"
         eyebrow="Puppies"
-        image="/images/photos/family-with-dogs.jpg"
+        image={asset("/images/photos/family-with-dogs.jpg")}
         imageAlt="Family with their dogs"
         intro={
           <>

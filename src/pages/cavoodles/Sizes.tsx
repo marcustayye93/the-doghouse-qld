@@ -1,4 +1,4 @@
-import { usePageMeta } from '../../components/ui';
+import { asset, usePageMeta } from '../../components/ui';
 import { CavoodleHero, CavoodleFooter } from './shared';
 
 export default function Sizes() {
@@ -10,7 +10,7 @@ export default function Sizes() {
     <>
       <CavoodleHero
         title="Cavoodle Sizes"
-        image="/images/photos/pup-in-hands.jpg"
+        image={asset("/images/photos/pup-in-hands.jpg")}
         imageAlt="Small Cavoodle puppy held in hands"
         intro={
           <>

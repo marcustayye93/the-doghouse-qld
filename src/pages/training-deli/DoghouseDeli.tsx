@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { PageHero, ReadMore, SquareImage, usePageMeta } from '../../components/ui';
+import { asset, PageHero, ReadMore, SquareImage, usePageMeta } from '../../components/ui';
 import {
   CheckboxField,
   Field,
@@ -90,7 +90,7 @@ export default function DoghouseDeli() {
       */}
       <PageHero
         title="Doghouse Deli"
-        image="/images/photos/basket-pups.jpg"
+        image={asset("/images/photos/basket-pups.jpg")}
         imageAlt="Cavoodle puppies in a basket"
         intro={
           <>
@@ -297,7 +297,7 @@ export default function DoghouseDeli() {
                 */}
               </div>
               <SquareImage
-                src="/images/photos/basket-pups-2.jpg"
+                src={asset("/images/photos/basket-pups-2.jpg")}
                 alt="Cavoodle puppies together"
               />
             </div>
@@ -309,7 +309,7 @@ export default function DoghouseDeli() {
             </p>
             <div className="my-6">
               <SquareImage
-                src="/images/photos/pup-grass.jpg"
+                src={asset("/images/photos/pup-grass.jpg")}
                 alt="Cavoodle puppy on the grass"
               />
             </div>
@@ -475,7 +475,7 @@ export default function DoghouseDeli() {
 
             <div className="my-8 grid items-center gap-8 md:grid-cols-2">
               <SquareImage
-                src="/images/photos/pup-in-hands.jpg"
+                src={asset("/images/photos/pup-in-hands.jpg")}
                 alt="Cavoodle puppy held in hands"
               />
               <div>

@@ -1,4 +1,4 @@
-import { usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
 
 export default function CurrentLitters() {
   usePageMeta(
@@ -10,7 +10,7 @@ export default function CurrentLitters() {
       <PageHero
         title="Current Litters"
         eyebrow="Puppies"
-        image="/images/photos/basket-pups-2.jpg"
+        image={asset("/images/photos/basket-pups-2.jpg")}
         imageAlt="Basket of young Cavoodle puppies"
         intro={
           <>

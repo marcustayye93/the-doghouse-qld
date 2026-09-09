@@ -1,4 +1,4 @@
-import { usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
 
 export default function PreparingForPuppy() {
   usePageMeta(
@@ -10,7 +10,7 @@ export default function PreparingForPuppy() {
       <PageHero
         title="Preparing for Your Puppy"
         eyebrow="Puppies"
-        image="/images/photos/pup-held-outdoors.jpg"
+        image={asset("/images/photos/pup-held-outdoors.jpg")}
         imageAlt="Cavoodle puppy being held outdoors"
         intro={
           <>

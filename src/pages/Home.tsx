@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CTAButton, usePageMeta } from '../components/ui';
+import { asset, CTAButton, usePageMeta } from '../components/ui';
 
 const photos = [
-  { src: '/images/photos/hero-thumper.jpg', alt: 'Cavoodle puppy portrait' },
-  { src: '/images/photos/home-solo.jpg', alt: 'Cavoodle puppy sitting' },
-  { src: '/images/photos/home-milo.jpg', alt: 'Cavoodle puppy portrait' },
-  { src: '/images/photos/home-juniper.jpg', alt: 'Cavoodle puppy with a bandana' },
-  { src: '/images/photos/home-beach-pup.jpg', alt: 'Cavoodle puppy on the beach' },
-  { src: '/images/photos/home-two-pups.jpg', alt: 'Two Cavoodle puppies together' },
-  { src: '/images/photos/hero-ruby.jpg', alt: 'Cavoodle puppy portrait' },
-  { src: '/images/photos/home-bronnie.jpg', alt: 'Cavoodle puppy portrait' },
+  { src: asset('/images/photos/hero-thumper.jpg'), alt: 'Cavoodle puppy portrait' },
+  { src: asset('/images/photos/home-solo.jpg'), alt: 'Cavoodle puppy sitting' },
+  { src: asset('/images/photos/home-milo.jpg'), alt: 'Cavoodle puppy portrait' },
+  { src: asset('/images/photos/home-juniper.jpg'), alt: 'Cavoodle puppy with a bandana' },
+  { src: asset('/images/photos/home-beach-pup.jpg'), alt: 'Cavoodle puppy on the beach' },
+  { src: asset('/images/photos/home-two-pups.jpg'), alt: 'Two Cavoodle puppies together' },
+  { src: asset('/images/photos/hero-ruby.jpg'), alt: 'Cavoodle puppy portrait' },
+  { src: asset('/images/photos/home-bronnie.jpg'), alt: 'Cavoodle puppy portrait' },
 ];
 
 function Gallery() {

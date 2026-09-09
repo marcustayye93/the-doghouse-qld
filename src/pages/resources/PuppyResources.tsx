@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { PageHero, ReadMore, usePageMeta } from '../../components/ui';
+import { asset, PageHero, ReadMore, usePageMeta } from '../../components/ui';
 
 const ilink =
   'font-semibold text-branddark underline decoration-brand/40 underline-offset-4 hover:decoration-brand';
@@ -26,7 +26,7 @@ export default function PuppyResources() {
       <PageHero
         title="Puppy Resources"
         eyebrow="Resources"
-        image="/images/photos/pup-sitting.jpg"
+        image={asset("/images/photos/pup-sitting.jpg")}
         imageAlt="Cavoodle puppy sitting"
         intro={
           <>

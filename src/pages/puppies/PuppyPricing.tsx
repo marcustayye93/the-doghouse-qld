@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
 
 export default function PuppyPricing() {
   usePageMeta(
@@ -11,7 +11,7 @@ export default function PuppyPricing() {
       <PageHero
         title="Puppy Pricing"
         eyebrow="Puppies"
-        image="/images/photos/pup-blue-bandana.jpg"
+        image={asset("/images/photos/pup-blue-bandana.jpg")}
         imageAlt="Cavoodle puppy wearing a blue bandana"
         intro={
           <>

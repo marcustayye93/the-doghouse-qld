@@ -1,4 +1,4 @@
-import { usePageMeta } from '../../components/ui';
+import { asset, usePageMeta } from '../../components/ui';
 import { CavoodleHero, CavoodleFooter } from './shared';
 import { ColourGallery } from './AboutCavoodles';
 
@@ -11,7 +11,7 @@ export default function ColoursMarkings() {
     <>
       <CavoodleHero
         title="Colours & Markings"
-        image="/images/photos/pup-blue-bandana.jpg"
+        image={asset("/images/photos/pup-blue-bandana.jpg")}
         imageAlt="Cavoodle wearing a blue bandana"
         intro={
           <>

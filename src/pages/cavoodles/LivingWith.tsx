@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { usePageMeta } from '../../components/ui';
+import { asset, usePageMeta } from '../../components/ui';
 import { CavoodleHero, CavoodleFooter } from './shared';
 
 const methodLinkClass =
@@ -14,7 +14,7 @@ export default function LivingWith() {
     <>
       <CavoodleHero
         title="Living With a Cavoodle"
-        image="/images/photos/family-with-dogs.jpg"
+        image={asset("/images/photos/family-with-dogs.jpg")}
         imageAlt="Family with dogs"
         intro={
           <>

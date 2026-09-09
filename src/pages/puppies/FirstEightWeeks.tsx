@@ -1,4 +1,4 @@
-import { usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
 
 export default function FirstEightWeeks() {
   usePageMeta(
@@ -10,7 +10,7 @@ export default function FirstEightWeeks() {
       <PageHero
         title="The First Eight Weeks"
         eyebrow="Puppies"
-        image="/images/photos/pup-in-hands.jpg"
+        image={asset("/images/photos/pup-in-hands.jpg")}
         imageAlt="Newborn Cavoodle puppy held gently in hands"
         intro={
           <>

@@ -1,4 +1,4 @@
-import { usePageMeta } from '../../components/ui';
+import { asset, usePageMeta } from '../../components/ui';
 import { CavoodleHero, CavoodleFooter } from './shared';
 
 export default function Shedding() {
@@ -10,7 +10,7 @@ export default function Shedding() {
     <>
       <CavoodleHero
         title="Shedding"
-        image="/images/photos/pup-sitting-3.jpg"
+        image={asset("/images/photos/pup-sitting-3.jpg")}
         imageAlt="Cavoodle sitting"
         intro={
           <>

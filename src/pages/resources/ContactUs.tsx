@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { PageHero, usePageMeta } from '../../components/ui';
+import { asset, PageHero, usePageMeta } from '../../components/ui';
 import { Field, FormShell, SelectField, TextArea } from '../../components/forms';
 
 const ilink =
@@ -26,7 +26,7 @@ export default function ContactUs() {
       <PageHero
         title="Contact Us"
         eyebrow="Resources"
-        image="/images/photos/family-with-dogs.jpg"
+        image={asset("/images/photos/family-with-dogs.jpg")}
         imageAlt="Family with their Cavoodle dogs"
         intro={
           <>

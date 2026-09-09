@@ -1,4 +1,4 @@
-import { usePageMeta } from '../../components/ui';
+import { asset, usePageMeta } from '../../components/ui';
 import { CavoodleHero, CavoodleFooter } from './shared';
 
 export default function CoatTypes() {
@@ -10,7 +10,7 @@ export default function CoatTypes() {
     <>
       <CavoodleHero
         title="Coat Types"
-        image="/images/photos/pup-yellow-bandana.jpg"
+        image={asset("/images/photos/pup-yellow-bandana.jpg")}
         imageAlt="Cavoodle wearing a yellow bandana"
         intro={
           <>

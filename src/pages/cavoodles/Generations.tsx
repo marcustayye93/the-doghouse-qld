@@ -1,4 +1,4 @@
-import { usePageMeta } from '../../components/ui';
+import { asset, usePageMeta } from '../../components/ui';
 import { CavoodleHero, CavoodleFooter } from './shared';
 
 export default function Generations() {
@@ -10,7 +10,7 @@ export default function Generations() {
     <>
       <CavoodleHero
         title="Cavoodle Generations"
-        image="/images/photos/pup-white-brown.jpg"
+        image={asset("/images/photos/pup-white-brown.jpg")}
         imageAlt="White and brown Cavoodle puppy"
         intro={
           <>
