@@ -32,7 +32,7 @@ export const navigation: NavItem[] = [
       { label: 'Available Puppies', path: '/puppies/available-puppies' },
       { label: 'Current Litters', path: '/puppies/current-litters' },
       { label: 'Planned & Upcoming Litters', path: '/puppies/planned-litters' },
-      { label: 'The Doghouse Method', path: '/puppies/doghouse-method' },
+      { label: 'The Doghouse Method™', path: '/puppies/doghouse-method' },
       { label: 'The First Eight Weeks', path: '/puppies/first-eight-weeks' },
       { label: 'Puppy Matching & Temperament', path: '/puppies/matching-temperament' },
       { label: 'Puppy Process & Applying', path: '/puppies/process-applying' },

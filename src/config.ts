@@ -14,7 +14,7 @@ export const siteConfig = {
     // Confirmed accounts (Master Site Map, section 15).
     facebook: 'https://www.facebook.com/share/19nShWDKkm/?mibextid=wwXIfr',
     instagram:
-      'https://www.instagram.com/the_doghouse_queensland?igsh=MTNiZjE1aXMxZ3kxeA%3D%3D&utm_source=qr',
+      'https://www.instagram.com/the_doghouse_queensland?stkn=MTNiZjE1aXMxZ3kxeA%3D%3D&utm_source=qr',
   },
   // Form delivery endpoint (e.g. Formspree / Web3Forms URL).
   // TO BE SUPPLIED: when empty, forms explain they are being connected.

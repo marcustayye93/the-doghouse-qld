@@ -654,6 +654,11 @@ export default function PuppyResources() {
             title="Contact Us"
             text="Still can't find what you're looking for? Get in touch with The Doghouse QLD and we'll point you in the right direction."
           />
+          <ResourceCard
+            to="/training"
+            title="Training"
+            text="A Cavoodle-specific training program is currently being developed by The Doghouse QLD for Cavoodle families everywhere."
+          />
         </div>
       </section>
     </main>

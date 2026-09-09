@@ -10,51 +10,62 @@ import {
 const ilink =
   'font-semibold text-branddark underline decoration-brand/40 underline-offset-4 hover:decoration-brand';
 
-/* OWNER: The individual portrait treat information graphics are final Doghouse QLD
-   artwork to be supplied (one per treat below). Do not recreate their nutritional
-   information as website text. Replace each placeholder with the supplied graphic,
-   keeping its original portrait aspect ratio, and make it tap-to-enlarge. */
+/* OWNER: Approved treat collection per "Y DOGHOUSE DELI with Deli Information.docx"
+   ("This version contains all information currently approved for Doghouse Deli").
+   Where X and Y conflicted on treat names, Y was followed (owner to confirm):
+   "Beef Neck Tendon" (X had "Beef liver"/"Beef tendons"), "Emu Neck" and
+   "Emu Lumbar Pieces" (X had only "Emu jerky pieces"), "Crocodile Tails"
+   (X had only "Crocodile feet"), "Goat Tripe", "Goat Lung Crisps", "Goat Liver"
+   and "Goat Kidney" (X had only "Goat horns"), "Shark Crispies"
+   (X had "Shark jerky crispies"). Public name "Kangaroo Jerky" (never
+   "Kangaroo Jerky Natural").
+   The individual portrait treat information graphics are final Doghouse QLD artwork
+   to be supplied (one per treat below). Per Y: do not recreate their nutritional
+   information as website text; do not crop the graphics into squares or alter their
+   proportions; each graphic must be clickable/tappable to enlarge into a clean
+   lightbox with an obvious close control (and close on outside tap). Replace each
+   text placeholder below with the supplied graphic, keeping its original portrait
+   aspect ratio. */
 const treatCollection: { protein: string; treats: string[] }[] = [
   {
     protein: 'Beef',
     treats: [
-      'Beef Achilles tendon',
-      'Natural beef jerky',
-      'Beef liver',
-      'Beef tendons',
-      'Beef pizzle',
-      'Beef trachea',
+      'Beef Achilles Tendon',
+      'Natural Beef Jerky',
+      'Beef Neck Tendon',
+      'Beef Pizzle',
+      'Beef Trachea',
     ],
   },
   {
     protein: 'Kangaroo',
     treats: [
-      'Kangaroo heart',
-      'Kangaroo jerky',
-      'Kangaroo leg meat cubes',
-      'Kangaroo tail pieces',
-      'Kangaroo teeth cleansers',
+      'Kangaroo Heart',
+      'Kangaroo Jerky',
+      'Kangaroo Leg Meat Cubes',
+      'Kangaroo Tail Pieces',
+      'Kangaroo Teeth Cleaners',
     ],
   },
   {
     protein: 'Seafood',
-    treats: ['Fish fingers', 'Green-lipped mussels', 'Shark cartilage', 'Shark jerky crispies'],
+    treats: ['Fish Fingers', 'Green-Lipped Mussels', 'Shark Cartilage', 'Shark Crispies'],
   },
   {
     protein: 'Venison',
-    treats: ['Venison jerky cubes', 'Venison jerky pieces'],
+    treats: ['Venison Jerky Cubes', 'Venison Jerky Pieces'],
   },
   {
     protein: 'Emu',
-    treats: ['Emu jerky pieces'],
+    treats: ['Emu Jerky Pieces', 'Emu Neck', 'Emu Lumbar Pieces'],
   },
   {
     protein: 'Crocodile',
-    treats: ['Crocodile feet'],
+    treats: ['Crocodile Feet', 'Crocodile Tails'],
   },
   {
     protein: 'Goat',
-    treats: ['Goat horns'],
+    treats: ['Goat Horns', 'Goat Tripe', 'Goat Lung Crisps', 'Goat Liver', 'Goat Kidney'],
   },
 ];
 
@@ -62,6 +73,25 @@ function TreatPlaceholder({ name }: { name: string }) {
   return (
     <div className="flex aspect-[3/4] items-center justify-center rounded-2xl border-2 border-dashed border-brand/30 bg-white p-4 text-center shadow-sm">
       <span className="text-sm font-semibold leading-snug text-ink/60">{name}</span>
+    </div>
+  );
+}
+
+/* OWNER: Per-protein square, slightly rounded image placeholders, per the approved
+   Deli docs ("Each protein category must have its own square, slightly rounded image
+   placeholder"). Replace each with the photograph supplied by The Doghouse QLD showing
+   examples of treats from that protein category. Do not use stock imagery.
+   Internal build labels (BEEF IMAGE etc.) are code comments only, never public. */
+function ProteinImagePlaceholder({ protein }: { protein: string }) {
+  return (
+    <div
+      role="img"
+      aria-label={`${protein} treat photograph to be supplied by The Doghouse QLD`}
+      className="mx-auto flex aspect-square w-full max-w-[220px] items-center justify-center rounded-xl border-2 border-dashed border-brand/30 bg-white p-4 text-center shadow-sm sm:mx-0 sm:max-w-none"
+    >
+      <span className="text-sm font-semibold leading-snug text-ink/50">
+        {protein} image to be supplied
+      </span>
     </div>
   );
 }
@@ -76,10 +106,111 @@ const interests = [
   'Everything Doghouse Deli',
 ];
 
+/* ============================================================================
+   OWNER: HIDDEN COMMERCIAL SECTIONS (NOT PUBLICLY DISPLAYED).
+   Per "Y DOGHOUSE DELI with Deli Information.docx" ("This version contains all
+   information currently approved for Doghouse Deli"):
+   - Pricing: "BUILD THIS SECTION NOW BUT DO NOT INVENT OR PUBLICLY DISPLAY A
+     PRICE. Create the structure required for the final monthly subscription
+     price and relevant purchasing call to action. Keep this section hidden
+     from public display until the final price has been supplied."
+   - Postage & Delivery: "BUILD THIS SECTION NOW BUT KEEP IT HIDDEN FROM PUBLIC
+     DISPLAY UNTIL THE FINAL INFORMATION IS AVAILABLE. Create an editable
+     section for: Delivery areas / Postage price / Any free-postage threshold
+     if one is introduced / Dispatch timing / Expected delivery information /
+     Relevant order cut-off information. Do not invent any values, delivery
+     timeframes or geographical coverage."
+   - Managing Your Subscription: 'Use the heading "Managing Your Subscription".
+     Do not use the phrase "subscription mechanics". BUILD THIS SECTION NOW BUT
+     KEEP THE unknown policy details hidden until they are finalised. Create an
+     editable structure capable of later explaining: Monthly billing / Renewal /
+     Cancellation / Cancellation cut-off / Updating delivery information /
+     Pausing a subscription, if offered / Skipping a delivery, if offered /
+     Failed payments / Any other necessary subscription-management conditions.
+     Do not invent any policy that has not yet been decided. Do not publicly
+     promise pause or skip functionality at this stage.'
+   These components are real structure but are NOT rendered for visitors: each
+   render site below is gated by a SHOW_* flag set to false. To activate a
+   section once the final values are supplied, flip its flag to true and fill
+   in the owner-supplied values. Do not invent prices, postage figures,
+   delivery details or policies.
+   ========================================================================== */
+const SHOW_DELI_PRICING = false; // OWNER: set true once the final monthly subscription price is supplied
+const SHOW_DELI_POSTAGE = false; // OWNER: set true once final postage & delivery information is supplied
+const SHOW_DELI_SUBSCRIPTION_POLICIES = false; // OWNER: set true once final subscription-management policies are decided
+
+function DeliPricingSection() {
+  return (
+    <section aria-label="Pricing">
+      <h2>Pricing</h2>
+      {/* OWNER: Final monthly subscription price to be supplied by The Doghouse QLD. Do not invent. */}
+      <p>
+        Monthly subscription price:{' '}
+        <strong>[awaiting owner-supplied final monthly subscription price]</strong>
+      </p>
+      {/* OWNER: Relevant purchasing call to action to be added here once the price is final. */}
+    </section>
+  );
+}
+
+function DeliPostageDeliverySection() {
+  return (
+    <section aria-label="Postage and delivery">
+      <h2>Postage &amp; Delivery</h2>
+      {/* OWNER: All values below to be supplied by The Doghouse QLD. Do not invent any values, delivery timeframes or geographical coverage. */}
+      <dl>
+        <div>
+          <dt>Delivery areas</dt>
+          <dd>[awaiting owner-supplied delivery areas]</dd>
+        </div>
+        <div>
+          <dt>Postage price</dt>
+          <dd>[awaiting owner-supplied postage price]</dd>
+        </div>
+        <div>
+          <dt>Free-postage threshold</dt>
+          <dd>[awaiting owner-supplied free-postage threshold, if one is introduced]</dd>
+        </div>
+        <div>
+          <dt>Dispatch timing</dt>
+          <dd>[awaiting owner-supplied dispatch timing]</dd>
+        </div>
+        <div>
+          <dt>Expected delivery information</dt>
+          <dd>[awaiting owner-supplied expected delivery information]</dd>
+        </div>
+        <div>
+          <dt>Order cut-off information</dt>
+          <dd>[awaiting owner-supplied order cut-off information]</dd>
+        </div>
+      </dl>
+    </section>
+  );
+}
+
+function DeliSubscriptionManagementStructure() {
+  return (
+    <>
+      {/* OWNER: Subscription-management policies below to be finalised by The Doghouse QLD. Do not invent any policy. Do not publicly promise pause or skip functionality until the final subscription platform is confirmed to support it. */}
+      <ul>
+        <li>Monthly billing: [awaiting owner-supplied policy]</li>
+        <li>Renewal: [awaiting owner-supplied policy]</li>
+        <li>Cancellation: [awaiting owner-supplied policy]</li>
+        <li>Cancellation cut-off: [awaiting owner-supplied policy]</li>
+        <li>Updating delivery information: [awaiting owner-supplied policy]</li>
+        <li>Pausing a subscription, if offered: [awaiting owner-supplied policy]</li>
+        <li>Skipping a delivery, if offered: [awaiting owner-supplied policy]</li>
+        <li>Failed payments: [awaiting owner-supplied policy]</li>
+        <li>Other subscription-management conditions: [awaiting owner-supplied policy]</li>
+      </ul>
+    </>
+  );
+}
+
 export default function DoghouseDeli() {
   usePageMeta(
     'Doghouse Deli',
-    'Natural, single-ingredient dog treats from Doghouse Deli, tried and tested by our Cavoodles with sensitive tummies and discerning palates in mind.'
+    'Doghouse Deli offers thoughtfully selected natural, single-ingredient dog treats, tried and tested by our own Cavoodles and chosen with sensitive tummies and discerning palates in mind.'
   );
   return (
     <main>
@@ -195,9 +326,8 @@ export default function DoghouseDeli() {
             </p>
             <p>Our standards go further than that.</p>
             <p>
-              As we finalise our nutritional information, families will also be able to see useful
-              information about the treats in our range, including their protein and fat analysis
-              where available.
+              Families can see useful information about the individual treats in Our Treat
+              Collection, including ingredients and nutritional analysis.
             </p>
             <p>We want you to understand what you&apos;re feeding your dog.</p>
 
@@ -207,7 +337,7 @@ export default function DoghouseDeli() {
               The treats selected for Doghouse Deli are single-ingredient treats that are slowly
               air-dried without unnecessary ingredients being added.
             </p>
-            <p>When something says beef liver, we want beef liver.</p>
+            <p>When something says beef, we want beef.</p>
             <p>When it says kangaroo heart, we want kangaroo heart.</p>
             <p>Simple.</p>
             <p>
@@ -270,7 +400,7 @@ export default function DoghouseDeli() {
                 <p>We&apos;re beginning Doghouse Deli with one carefully curated assorted treat box.</p>
                 <p>
                   Each box contains a changing selection chosen from our approved Doghouse Deli
-                  treat range.
+                  treat collection.
                 </p>
                 <p>
                   Not every box will contain every treat or every protein. The assortment will
@@ -288,13 +418,12 @@ export default function DoghouseDeli() {
                   Deli.
                 </p>
                 {/*
-                  OWNER: Pricing and postage are intentionally not displayed publicly yet.
-                  Per the approved docs and master handover, do not invent or publish prices.
-                  Structure to activate later without redesigning the page:
-                  - "Subscription price" heading with the final monthly subscription price
-                  - "Postage" heading with final postage price and delivery details
-                  Keep these hidden until the final figures are supplied.
+                  OWNER: Pricing section structure (hidden until the final monthly
+                  subscription price is supplied). See <DeliPricingSection /> above;
+                  flip SHOW_DELI_PRICING to true to activate. Do not invent or
+                  publicly display a price.
                 */}
+                {SHOW_DELI_PRICING && <DeliPricingSection />}
               </div>
               <SquareImage
                 src={asset("/images/photos/basket-pups-2.jpg")}
@@ -303,10 +432,6 @@ export default function DoghouseDeli() {
             </div>
 
             <h2>Our Treat Collection</h2>
-            <p>
-              Your assorted Doghouse Deli box may contain treats selected from the following
-              collection.
-            </p>
             <div className="my-6">
               <SquareImage
                 src={asset("/images/photos/pup-grass.jpg")}
@@ -317,17 +442,29 @@ export default function DoghouseDeli() {
             {treatCollection.map((group) => (
               <div key={group.protein} className="mt-8">
                 <h3 className="!text-xl">{group.protein}</h3>
-                <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                  {group.treats.map((treat) => (
-                    <TreatPlaceholder key={treat} name={treat} />
-                  ))}
+                {/*
+                  OWNER: BEEF IMAGE / KANGAROO IMAGE / SEAFOOD IMAGE / VENISON IMAGE /
+                  EMU IMAGE / CROCODILE IMAGE / GOAT IMAGE: internal build labels only,
+                  never displayed publicly. Each protein category has its own square,
+                  slightly rounded image placeholder for the photograph to be supplied
+                  by The Doghouse QLD. Do not use stock imagery.
+                */}
+                <div className="mt-4 grid items-start gap-4 sm:grid-cols-[200px_1fr]">
+                  <ProteinImagePlaceholder protein={group.protein} />
+                  <div className="grid grid-cols-2 gap-4 xl:grid-cols-3">
+                    {group.treats.map((treat) => (
+                      <TreatPlaceholder key={treat} name={treat} />
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
 
-            <p className="mt-8">
-              Not every treat listed above will appear in every box. This is our broader approved
-              collection from which each assorted box may be selected.
+            <p className="mt-8">Not every treat in Our Treat Collection will appear in every box.</p>
+            <p>
+              Our assorted boxes contain a changing selection from this broader collection,
+              allowing us to offer different proteins, textures and treat experiences from one
+              delivery to another.
             </p>
 
             <h3>A little word about richer treats</h3>
@@ -346,8 +483,9 @@ export default function DoghouseDeli() {
               fat levels and how we would realistically use it with our own dogs.
             </p>
             <p>
-              As our individual nutritional information is finalised, we&apos;ll make that
-              information available so families can make informed choices too.
+              That&apos;s also why we&apos;ve included the nutritional analysis with the
+              individual treats in Our Treat Collection. We believe families should be able to
+              see useful information about what they&apos;re feeding their dogs.
             </p>
             {/*
               OWNER: Individual treat nutritional analysis to be added here once supplied.
@@ -646,6 +784,14 @@ export default function DoghouseDeli() {
             <p>Would we feed this to our own Cavoodles?</p>
             <p>If the answer isn&apos;t yes, it doesn&apos;t belong in Doghouse Deli.</p>
 
+            {/*
+              OWNER: Postage & Delivery section structure (hidden until the final
+              information is available). See <DeliPostageDeliverySection /> above;
+              flip SHOW_DELI_POSTAGE to true to activate. Do not invent any values,
+              delivery timeframes or geographical coverage.
+            */}
+            {SHOW_DELI_POSTAGE && <DeliPostageDeliverySection />}
+
             <h2>The Doghouse Deli subscription</h2>
             <p>
               Doghouse Deli is designed as a convenient monthly subscription so a fresh selection
@@ -659,37 +805,18 @@ export default function DoghouseDeli() {
               box. Future monthly deliveries provide your fresh selection in sealed refill
               packaging.
             </p>
+            <h2>Managing Your Subscription</h2>
             {/*
-              OWNER: Monthly subscription price and postage are intentionally not displayed
-              publicly yet. Per the approved docs and master handover, do not invent or
-              publish prices, postage, checkout or payment details. Activate these sections
-              (with final subscription terms) before enabling purchasing.
+              OWNER: Per "Y DOGHOUSE DELI with Deli Information.docx": 'Use the heading
+              "Managing Your Subscription". Do not use the phrase "subscription mechanics".
+              BUILD THIS SECTION NOW BUT KEEP THE unknown policy details hidden until they
+              are finalised.' The editable policy structure is
+              <DeliSubscriptionManagementStructure /> above; flip
+              SHOW_DELI_SUBSCRIPTION_POLICIES to true once the final policies are decided.
+              Do not invent any policy. Do not publicly promise pause or skip functionality
+              at this stage.
             */}
-
-            <h2>Managing your subscription</h2>
-            <p>
-              We want Doghouse Deli to be something you and your dog look forward to, not
-              something you&apos;re trapped into.
-            </p>
-            <p>Your subscription will continue monthly until cancelled.</p>
-            <p>
-              You&apos;ll be able to manage your delivery details and cancel your subscription in
-              accordance with our subscription terms.
-            </p>
-            <p>
-              Where supported by our final subscription system, we also intend to make managing
-              your subscription as flexible as practical, including options such as pausing or
-              skipping a delivery.
-            </p>
-            <p>
-              Full processing dates, cancellation cut-offs and subscription terms will be clearly
-              available before you subscribe.
-            </p>
-            {/*
-              OWNER: Do not publicly promise pause or skip functionality unless the final
-              subscription platform supports it correctly. Final billing, cancellation and
-              subscription-management policies to be added once decided.
-            */}
+            {SHOW_DELI_SUBSCRIPTION_POLICIES && <DeliSubscriptionManagementStructure />}
 
             <div
               id="deli-signup"

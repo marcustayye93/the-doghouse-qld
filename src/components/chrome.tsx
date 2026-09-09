@@ -86,7 +86,7 @@ function MobileNav({ onNavigate }: { onNavigate: () => void }) {
                         onClick={onNavigate}
                         className="block py-2 text-sm font-semibold text-branddark"
                       >
-                        {item.label} overview
+                        {item.label}
                       </Link>
                     </li>
                     {item.children.map((child) => (
@@ -272,13 +272,18 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-xs md:flex-row md:px-6">
           <p>© {year} The Doghouse QLD. All rights reserved.</p>
-          <div className="flex gap-5">
-            <Link to="/privacy-policy" className="transition hover:text-white hover:underline underline-offset-4">
-              Privacy Policy
-            </Link>
-            <Link to="/terms-and-conditions" className="transition hover:text-white hover:underline underline-offset-4">
-              Terms &amp; Conditions
-            </Link>
+          <div>
+            <p className="mb-2 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-cream/70 md:text-right">
+              Legal
+            </p>
+            <div className="flex gap-5">
+              <Link to="/privacy-policy" className="transition hover:text-white hover:underline underline-offset-4">
+                Privacy Policy
+              </Link>
+              <Link to="/terms-and-conditions" className="transition hover:text-white hover:underline underline-offset-4">
+                Terms &amp; Conditions
+              </Link>
+            </div>
           </div>
         </div>
       </div>

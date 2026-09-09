@@ -45,7 +45,7 @@ const readMoreButtonClass =
 export default function AboutCavoodles() {
   usePageMeta(
     'About Cavoodles',
-    'Cavoodle temperament, sizes, coats, colours, shedding, grooming and family life, plus multi-generational Cavoodles from The Doghouse QLD.'
+    'Learn about Cavoodles, including temperament, sizes, coats, colours, shedding, grooming, family life and multi-generational Cavoodles from The Doghouse QLD in Queensland.'
   );
   const [open, setOpen] = useState(false);
   const topRef = useRef<HTMLElement>(null);

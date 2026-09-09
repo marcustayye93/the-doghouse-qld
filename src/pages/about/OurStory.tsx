@@ -3,7 +3,7 @@ import { asset, PageHero, ReadMore, usePageMeta } from '../../components/ui';
 export default function OurStory() {
   usePageMeta(
     'Our Story',
-    'The story behind The Doghouse QLD, from a childhood sidekick named Poochie to a Queensland Cavoodle breeding program built on love and science.'
+    'The story behind The Doghouse QLD.'
   );
 
   return (

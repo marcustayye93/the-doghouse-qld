@@ -7,7 +7,7 @@ const ilink =
 export default function TermsConditions() {
   usePageMeta(
     'Website Terms & Conditions',
-    'Read the Website Terms & Conditions for The Doghouse QLD, covering website use, puppies, educational content, intellectual property and services.'
+    'Read the Website Terms & Conditions for The Doghouse QLD, including information about website use, puppies, educational content, intellectual property and services.'
   );
   return (
     <main>

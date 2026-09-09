@@ -4,7 +4,7 @@ import { PhotoPlaceholder } from './PhotoPlaceholder';
 export default function BreedingPhilosophy() {
   usePageMeta(
     'Our Breeding Philosophy',
-    'Thoughtful breeding starts long before puppies are born. The health, temperament and structure considerations behind every Doghouse pairing.'
+    'The breeding philosophy behind The Doghouse QLD.'
   );
 
   return (

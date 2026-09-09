@@ -77,7 +77,7 @@ function Profile({ member, flip }: { member: TeamMember; flip: boolean }) {
 export default function MeetTheTeam() {
   usePageMeta(
     'Meet the Team',
-    'Meet the small, hands-on team behind The Doghouse QLD who raise our Cavoodle puppies through their precious first eight weeks.'
+    'Meet the people behind The Doghouse QLD.'
   );
 
   return (

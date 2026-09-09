@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { asset, CTAButton, usePageMeta } from '../components/ui';
 
 const photos = [
@@ -76,8 +75,8 @@ function Gallery() {
 
 export default function Home() {
   usePageMeta(
-    'The Doghouse QLD - Thoughtfully Bred, Beautifully Raised Cavoodles',
-    'The Doghouse QLD is a specialist multi-generational Cavoodle breeder in Queensland, Australia. Thoughtfully bred. Beautifully raised.'
+    'The Doghouse QLD',
+    'The Doghouse QLD is a specialist multi-generational Cavoodle breeder in Queensland, Australia.'
   );
   return (
     <main>
@@ -88,30 +87,6 @@ export default function Home() {
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-gold">
             Start your journey to welcome a Doghouse Cavoodle puppy into your home.
           </p>
-        </div>
-      </section>
-      <section className="mx-auto max-w-6xl px-5 pb-4 md:px-6" aria-label="Explore the website">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { to: '/about-us', title: 'About Us', text: 'Our story, philosophy and health testing.' },
-            { to: '/puppies', title: 'Puppies', text: 'Litters, our method, process and waitlist.' },
-            { to: '/our-dogs', title: 'Our Dogs', text: 'Meet the dogs behind our puppies.' },
-            { to: '/cavoodles', title: 'Cavoodles', text: 'Learn about the breed we love.' },
-          ].map((card) => (
-            <Link
-              key={card.to}
-              to={card.to}
-              className="group rounded-2xl border border-brand/10 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-            >
-              <h2 className="font-display text-3xl font-bold text-deep group-hover:text-branddark">
-                {card.title}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink/80">{card.text}</p>
-              <span className="mt-3 inline-block text-sm font-bold text-branddark">
-                Explore <span aria-hidden="true">›</span>
-              </span>
-            </Link>
-          ))}
         </div>
       </section>
     </main>

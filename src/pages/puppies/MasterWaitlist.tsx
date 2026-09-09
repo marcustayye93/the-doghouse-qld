@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { asset, usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
 import { FormShell, Field, CheckboxField, RadioGroup } from '../../components/forms';
 
 /** CTAButton styling for links that include a hash anchor (native navigation). */
@@ -62,6 +63,7 @@ export default function MasterWaitlist() {
     'Join the free Doghouse QLD Master Waitlist to hear about future litters and puppy availability.'
   );
   const [searchParams] = useSearchParams();
+  const [expanded, setExpanded] = useState(false);
   const puppyParam = searchParams.get('puppy');
   const interestOptions = puppyParam ? [puppyParam, GENERAL_INTEREST] : [GENERAL_INTEREST];
 
@@ -101,62 +103,15 @@ export default function MasterWaitlist() {
       />
       <section className="mx-auto max-w-4xl px-5 pb-16">
         <div className="prose-dog">
-          <ReadMore id="waitlist-more" summary={<></>}>
-            <h2>How the Master Waitlist Works</h2>
-            <p>Joining is simple.</p>
-            <p>
-              Add your details to our Master Waitlist and we&apos;ll let you know by email when we
-              have a new litter or puppies available.
-            </p>
-            <p>
-              You don&apos;t need to tell us now whether you&apos;re looking for a boy or girl, a
-              particular size, coat or colour. When puppies become available, you can visit our
-              Available Puppies page and see the information about them at that time.
-            </p>
-            <p>
-              If a litter or puppy catches your eye, you can send us a simple Expression of
-              Interest.
-            </p>
-            <p>
-              If it isn&apos;t the right litter or the timing isn&apos;t right, you don&apos;t
-              need to do anything at all. Simply remain on the Master Waitlist and wait to hear
-              from us again.
-            </p>
-
-            <h2>No Deposits. No Numbered Positions.</h2>
-            <p>Our Master Waitlist isn&apos;t a traditional numbered puppy waiting list.</p>
-            <p>There is no fee to join.</p>
-            <p>There is no deposit required.</p>
-            <p>
-              There isn&apos;t a first, second or twentieth position that automatically determines
-              who receives a puppy.
-            </p>
-            <p>And joining the Master Waitlist doesn&apos;t commit you to the next puppy that becomes available.</p>
-            <p>
-              We believe finding the right home for a puppy involves much more than simply working
-              down a list of names.
-            </p>
-            <p>When something catches your eye, that&apos;s when the conversation begins.</p>
-
-            <h2>When We Have Puppies Available</h2>
-            <p>
-              When we have a litter or puppies available, we&apos;ll send an email to our Master
-              Waitlist families letting you know there&apos;s something new to see.
-            </p>
-            <p>
-              From there, you can visit our Available Puppies page where you&apos;ll find the
-              current information about the puppies looking for their families.
-            </p>
-            <p>
-              Depending on the puppy and the information available at the time, you may be able to
-              see photographs, sex, colour and markings, expected adult size, coat information,
-              price and a little about the puppy themselves.
-            </p>
-            <p>You can take your time, have a look and decide whether you&apos;d like to know more.</p>
-            <p>
-              <CTAButton to="/puppies/available-puppies">View Available Puppies</CTAButton>
-            </p>
-          </ReadMore>
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            aria-expanded={expanded}
+            aria-controls="waitlist-more"
+            className="inline-flex items-center gap-1 font-semibold text-branddark underline decoration-brand/40 underline-offset-4 hover:decoration-brand"
+          >
+            {expanded ? 'Read less' : 'Read more...'}
+          </button>
 
           <div
             id="join-the-master-waitlist"
@@ -220,6 +175,80 @@ export default function MasterWaitlist() {
               , and you can unsubscribe from Master Waitlist emails at any time.
             </p>
           </div>
+
+          <div
+            id="waitlist-more"
+            className={`grid transition-all duration-500 ease-in-out ${
+              expanded ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'
+            }`}
+          >
+            <div className="overflow-hidden">
+            <h2>How the Master Waitlist Works</h2>
+            <p>Joining is simple.</p>
+            <p>
+              Add your details to our Master Waitlist and we&apos;ll let you know by email when we
+              have a new litter or puppies available.
+            </p>
+            <p>
+              You don&apos;t need to tell us now whether you&apos;re looking for a boy or girl, a
+              particular size, coat or colour. When puppies become available, you can visit our
+              Available Puppies page and see the information about them at that time.
+            </p>
+            <p>
+              If a litter or puppy catches your eye, you can send us a simple Expression of
+              Interest.
+            </p>
+            <p>
+              If it isn&apos;t the right litter or the timing isn&apos;t right, you don&apos;t
+              need to do anything at all. Simply remain on the Master Waitlist and wait to hear
+              from us again.
+            </p>
+
+            <h2>No Deposits. No Numbered Positions.</h2>
+            <p>Our Master Waitlist isn&apos;t a traditional numbered puppy waiting list.</p>
+            <p>There is no fee to join.</p>
+            <p>There is no deposit required.</p>
+            <p>
+              There isn&apos;t a first, second or twentieth position that automatically determines
+              who receives a puppy.
+            </p>
+            <p>And joining the Master Waitlist doesn&apos;t commit you to the next puppy that becomes available.</p>
+            <p>
+              We believe finding the right home for a puppy involves much more than simply working
+              down a list of names.
+            </p>
+            <p>When something catches your eye, that&apos;s when the conversation begins.</p>
+
+            <h2>When We Have Puppies Available</h2>
+            <p>
+              When we have a litter or puppies available, we&apos;ll send an email to our Master
+              Waitlist families letting you know there&apos;s something new to see.
+            </p>
+            <p>
+              From there, you can visit our Available Puppies page where you&apos;ll find the
+              current information about the puppies looking for their families.
+            </p>
+            <p>
+              Depending on the puppy and the information available at the time, you may be able to
+              see photographs, sex, colour and markings, expected adult size, coat information,
+              price and a little about the puppy themselves.
+            </p>
+            <p>You can take your time, have a look and decide whether you&apos;d like to know more.</p>
+            <p>
+              <CTAButton to="/puppies/available-puppies">View Available Puppies</CTAButton>
+            </p>
+            </div>
+          </div>
+          {expanded && (
+            <button
+              type="button"
+              onClick={() => setExpanded(false)}
+              className="mt-3 inline-flex items-center gap-1 font-semibold text-branddark underline decoration-brand/40 underline-offset-4 hover:decoration-brand"
+            >
+              Read less
+            </button>
+          )}
+
 
           <h2>Interested in One of Our Puppies?</h2>
           <p>

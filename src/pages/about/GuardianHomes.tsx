@@ -1,5 +1,4 @@
-import { CTAButton, PawDivider, ReadMore, usePageMeta } from '../../components/ui';
-import { CheckboxField, Field, FormShell } from '../../components/forms';
+import { CTAButton, ReadMore, usePageMeta } from '../../components/ui';
 import { PhotoPlaceholder } from './PhotoPlaceholder';
 
 export default function GuardianHomes() {
@@ -245,34 +244,6 @@ export default function GuardianHomes() {
         </div>
         <div className="mt-6">
           <CTAButton to="/about-us/guardian-homes/apply">Apply Now</CTAButton>
-        </div>
-      </section>
-
-      <PawDivider />
-
-      <section className="mx-auto max-w-2xl px-5 py-10 md:py-14">
-        <h2 className="font-display text-4xl font-bold leading-tight text-deep md:text-5xl">
-          Guardian Opportunities
-        </h2>
-        <p className="mt-3 leading-relaxed text-ink/80">
-          Join our Guardian Opportunities list to receive an email when a new Guardian Home
-          opportunity becomes available.
-        </p>
-        <div className="mt-6">
-          <FormShell
-            formName="guardian-opportunities"
-            submitLabel="Subscribe"
-            successHeading="Thank you."
-            successMessage="You have been added to our Guardian Opportunities list. We will email you when a new Guardian Home opportunity becomes available."
-          >
-            <Field label="Your name" name="name" type="text" required autoComplete="name" />
-            <Field label="Email address" name="email" type="email" required autoComplete="email" />
-            <CheckboxField
-              label="Yes, I'd also like to receive email notifications when The Doghouse QLD has new Guardian Home opportunities available."
-              name="consent"
-              required
-            />
-          </FormShell>
         </div>
       </section>
     </main>

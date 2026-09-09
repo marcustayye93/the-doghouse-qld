@@ -418,10 +418,7 @@ function StudProfileCard({ profile, flip }: { profile: StudProfile; flip: boolea
               </div>
             ))}
           </dl>
-          {profile.personalityPending ? (
-            /* OWNER: Teddy's personality copy has not been supplied yet. Add it here when approved by The Doghouse QLD. Do not invent it. */
-            <h4 className="mt-5 text-lg font-bold text-deep">{profile.personalityHeading}</h4>
-          ) : (
+          {profile.personalityPending ? null : (
             <>
               <h4 className="mt-5 text-lg font-bold text-deep">{profile.personalityHeading}</h4>
               <div className="prose-dog mt-2">

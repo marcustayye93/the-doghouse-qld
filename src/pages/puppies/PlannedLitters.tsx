@@ -68,8 +68,6 @@ export default function PlannedLitters() {
           </ReadMore>
 
           {/* OWNER: Upcoming (Pregnancy Confirmed) and Planned (Planned Pairing) litter profiles to be supplied by The Doghouse QLD. No pairings, dates or predictions have been invented. */}
-          <h2>Upcoming Litters</h2>
-          <h2>Planned Litters</h2>
           <div className="rounded-2xl border border-brand/15 bg-white p-8 text-center shadow-sm md:p-10">
             <div className="mx-auto max-w-sm">
               <SquareImage

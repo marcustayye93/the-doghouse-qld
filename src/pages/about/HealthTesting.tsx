@@ -4,7 +4,7 @@ import { PhotoPlaceholder } from './PhotoPlaceholder';
 export default function HealthTesting() {
   usePageMeta(
     'Health & Health Testing',
-    'Health testing at The Doghouse QLD goes far beyond DNA. Learn about our comprehensive screening program for our breeding dogs.'
+    'Health and health testing at The Doghouse QLD.'
   );
 
   return (

@@ -15,7 +15,7 @@ export const trainingDeliRoutes: RouteDef[] = [
     path: '/doghouse-deli',
     title: 'Doghouse Deli | Natural Dog Treat Boxes | The Doghouse QLD',
     description:
-      'Doghouse Deli: natural, single-ingredient dog treats in a monthly assorted box, tried and tested by our own Cavoodles.',
+      'Doghouse Deli offers thoughtfully selected natural, single-ingredient dog treats, tried and tested by our own Cavoodles and chosen with sensitive tummies and discerning palates in mind.',
     Component: DoghouseDeli,
   },
 ];

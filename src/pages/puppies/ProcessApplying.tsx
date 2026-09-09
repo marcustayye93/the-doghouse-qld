@@ -8,6 +8,7 @@ import {
   SelectField,
   CheckboxField,
   RadioGroup,
+  inputClass,
 } from '../../components/forms';
 
 /** In-page anchor button matching CTAButton styling (native smooth scroll). */
@@ -376,6 +377,12 @@ export default function ProcessApplying() {
                 submitLabel="Submit My Puppy Application"
                 successHeading="Thank You"
                 successMessage="Thank you for taking the time to tell us a little about yourself and the home you could offer a Doghouse puppy. Your application has been received and will be reviewed by The Doghouse QLD. We look forward to learning more about you and hopefully helping you find the little Doghouse puppy who may become part of your family."
+                fieldValidators={{
+                  postcode: {
+                    test: (value) => /^\d{4}$/.test(value),
+                    message: 'Please enter a valid postcode.',
+                  },
+                }}
               >
                 {puppyParam && (
                   <p
@@ -393,7 +400,7 @@ export default function ProcessApplying() {
                   <div className="grid gap-5 sm:grid-cols-3">
                     <Field label="Suburb" name="suburb" type="text" required autoComplete="address-level2" />
                     <SelectField label="State" name="state" options={AU_STATES} required />
-                    <Field label="Postcode" name="postcode" type="text" required placeholder="e.g. 4510" autoComplete="postal-code" />
+                    <Field label="Postcode" name="postcode" type="text" required autoComplete="postal-code" />
                   </div>
                   <RadioGroup
                     legend="Preferred Method of Contact"
@@ -425,7 +432,6 @@ export default function ProcessApplying() {
                       label="Please tell us the ages of the children in your household."
                       name="children_ages"
                       type="text"
-                      placeholder="e.g. 4 and 7"
                     />
                   )}
                   <div
@@ -460,10 +466,11 @@ export default function ProcessApplying() {
                     />
                   </div>
                   {homeType === 'Other' && (
-                    <Field
-                      label="Please tell us about your home type."
-                      name="home_type_other"
+                    <input
                       type="text"
+                      name="home_type_other"
+                      aria-label="What type of home do you live in?"
+                      className={inputClass}
                     />
                   )}
                   <div onChange={(e) => setOwnRent((e.target as HTMLInputElement).value)}>
@@ -497,17 +504,11 @@ export default function ProcessApplying() {
                     name="typical_weekday"
                     required
                   />
-                  <SelectField
+                  <Field
                     label="Approximately how long would your puppy usually be home without a person present?"
                     name="time_alone"
+                    type="text"
                     required
-                    options={[
-                      'Less than 2 hours',
-                      '2 to 4 hours',
-                      '4 to 6 hours',
-                      'More than 6 hours',
-                      'It varies',
-                    ]}
                   />
                   <TextArea
                     label="What kinds of activities would you like your future dog to be part of?"
@@ -607,8 +608,8 @@ export default function ProcessApplying() {
                   <TextArea
                     label="Do you have preferred colours or markings?"
                     name="preferred_colours"
-                    placeholder="Type 'No preference' if you have none, or tell us what you love."
                   />
+                  <CheckboxField label="No preference" name="preferred_colours_no_preference" />
                   <TextArea
                     label="Which of these preferences are particularly important to you, and which are simply preferences?"
                     name="preference_importance"
@@ -621,11 +622,16 @@ export default function ProcessApplying() {
                     name="hoped_temperament"
                     required
                   />
-                  <TextArea
-                    label="Is there anything you particularly hope to do with your dog?"
-                    name="hoped_activities"
-                    placeholder="For example, family companionship, walking, travelling, an active lifestyle, training activities or simply sharing everyday family life."
-                  />
+                  <div>
+                    <TextArea
+                      label="Is there anything you particularly hope to do with your dog?"
+                      name="hoped_activities"
+                    />
+                    <p className="mt-2 text-sm font-normal text-ink/70">
+                      For example, family companionship, walking, travelling, an active
+                      lifestyle, training activities or simply sharing everyday family life.
+                    </p>
+                  </div>
                   <TextArea
                     label="Is there anything about your household or lifestyle that you think we should consider when helping you find the right puppy?"
                     name="household_considerations"

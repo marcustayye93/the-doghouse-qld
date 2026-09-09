@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { asset, PageHero, ReadMore, usePageMeta } from '../../components/ui';
-import { CheckboxField, Field, FormShell, TextArea } from '../../components/forms';
 
 const ilink =
   'font-semibold text-branddark underline decoration-brand/40 underline-offset-4 hover:decoration-brand';
@@ -8,7 +7,7 @@ const ilink =
 export default function Training() {
   usePageMeta(
     'Cavoodle Training',
-    'A Cavoodle-specific training program is being developed by The Doghouse QLD for Cavoodle families everywhere, focused on confident, well-mannered companions.'
+    'A Cavoodle-specific training program is currently being developed by The Doghouse QLD for Cavoodle families everywhere, with a focus on confident, well-mannered family companions.'
   );
   return (
     <main>
@@ -127,48 +126,6 @@ export default function Training() {
           </p>
         </div>
 
-        {/*
-          OWNER: The interest form below was added so visitors can register interest in the
-          future training program. Its heading, labels and success message are functional
-          microcopy (not from the approved docs) and should be reviewed. Per ZZZE, a dedicated
-          Training mailing audience must only be created with explicit owner approval before
-          this form is connected to any mailing system.
-        */}
-        <div id="training-interest" className="mt-12 scroll-mt-24 rounded-2xl border border-brand/15 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="font-display text-4xl font-bold text-deep">Register your interest</h2>
-          <p className="mt-3 leading-relaxed text-ink/80">
-            Leave your details and we&apos;ll let you know when there&apos;s news about the
-            Doghouse QLD training program.
-          </p>
-          <div className="mt-6">
-            <FormShell
-              formName="training-interest"
-              submitLabel="Register Interest"
-              successHeading="Thank you!"
-              successMessage="Thanks for your interest. We'll share updates about the training program as it develops."
-            >
-              <Field label="Your name" name="name" required placeholder="Your name" />
-              <Field
-                label="Email address"
-                name="email"
-                type="email"
-                required
-                placeholder="you@example.com"
-              />
-              <TextArea
-                label="Tell us a little about your dog (optional)"
-                name="dog"
-                placeholder="Optional"
-                rows={3}
-              />
-              <CheckboxField
-                required
-                name="consent"
-                label="Yes, I'd like to receive updates about the Doghouse QLD training program by email."
-              />
-            </FormShell>
-          </div>
-        </div>
       </section>
     </main>
   );

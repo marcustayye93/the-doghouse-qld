@@ -4,6 +4,7 @@ import { usePageMeta } from '../../components/ui';
 import {
   CheckboxField,
   Field,
+  FieldError,
   FormShell,
   RadioGroup,
   SelectField,
@@ -55,9 +56,20 @@ function ChoiceGroup({
           </label>
         ))}
       </div>
+      <FieldError fieldKey={name} />
     </fieldset>
   );
 }
+
+// ZZZC GUARDIAN HOME APPLICATION FORM.docx - exact error messages.
+const guardianErrorMessages: Record<string, string> = {
+  full_name: 'Please enter your name.',
+  email: 'Please enter a valid email address.',
+  phone: 'Please enter your phone number.',
+  suburb: 'Please enter your suburb.',
+  postcode: 'Please enter your postcode.',
+  household: 'Please tell us who the guardian dog would be living with.',
+};
 
 export default function GuardianApplication() {
   usePageMeta(
@@ -105,6 +117,14 @@ export default function GuardianApplication() {
           submitLabel="Submit Guardian Home Application"
           successHeading="Thank you!"
           successMessage={successMessage}
+          errorMessages={guardianErrorMessages}
+          requiredGroups={[
+            {
+              key: 'interests',
+              names: ['interest_girl', 'interest_boy', 'interest_either'],
+              message: "Please select the Guardian opportunity you're interested in.",
+            },
+          ]}
         >
           <div className="grid gap-4 rounded-2xl border border-brand/10 bg-white p-6 shadow-sm md:p-8">
             <SectionHeading>Your Details</SectionHeading>
@@ -151,8 +171,8 @@ export default function GuardianApplication() {
                   required
                 />
                 <HelperText>
-                  Please include whether any dogs are male or female and whether they are
-                  desexed.
+                  Please include whether any dogs are male or female and whether they are desexed.
+                  This is important because Guardian Homes cannot have incompatible entire dogs.
                 </HelperText>
               </div>
             )}
@@ -214,6 +234,7 @@ export default function GuardianApplication() {
                   name="interest_either"
                 />
               </div>
+              <FieldError fieldKey="interests" />
             </fieldset>
             <HelperText>
               The requirements and travel involved can differ between guardian girls and boys, so
