@@ -14,6 +14,7 @@ export default {
         cream: '#FDFCF8',
         mist: '#E9F5F3',
         honey: '#E9A23B',
+        gold: '#A98A5B',
       },
       fontFamily: {
         display: ['Corinthia', 'cursive'],
