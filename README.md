@@ -39,6 +39,31 @@ Suggested shots: hero image of Charmaine with dogs, puppy gallery, home environm
 - Reviews: one verified RightPaw review is quoted; more live on the
   [Facebook reviews page](https://www.facebook.com/profile.php?id=100067893231417&sk=reviews).
 
+## Breeder handover package (authoritative)
+
+`docs/handover/` holds the complete website specification supplied by The Doghouse QLD
+(45 documents, Sep 2026). It is the **source of truth** for the full site and takes
+priority over the starter scaffold in `src/`:
+
+- `A AAA Lovable START HERE Master Handover Instructions.docx` — read first.
+- `ZZZL Final Master Site Map and Build Instructions.docx` — site map, nav order,
+  all ~35 pages, forms, build stages. Read second.
+- Page-by-page build instructions (About Us, Puppies, Our Dogs, Cavoodles, Training,
+  Doghouse Deli, Resources), forms (Contact, Puppy Application, Master Waitlist,
+  Guardian Home Application, Deli signup), mailing audiences, legal pages, SEO,
+  404 page, audits, and launch testing.
+- Layout reference images and the logo master files (`.ai` + `.pdf`).
+- `ZZZN Remaining Real World Connection details.docx` — items the breeder must still
+  supply (domain, form receiving email, mailing provider, photographs, etc.).
+
+Key rules from the handover: preserve approved copy verbatim, Australian English, no
+em dashes, no stock/AI dog photos (flag missing images instead), three mailing
+audiences kept separate, do not launch without owner approval.
+
+The starter scaffold in `src/` covers the brand foundation (logo, teal `#17A296`,
+Corinthia Bold headings) and a subset of pages. The full multi-page build with forms,
+blog, FAQ and mailing lists follows the handover documents.
+
 ## Connecting to Lovable
 
 1. In Lovable, create a new project (any starter prompt is fine).
