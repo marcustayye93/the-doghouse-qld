@@ -1,18 +1,4 @@
-import type { ReactNode } from 'react';
 import { asset, usePageMeta, PageHero, CTAButton, PawDivider, SquareImage } from '../../components/ui';
-
-/** CTAButton styling for links that include a hash anchor (native navigation). */
-function AnchorCTA({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <a
-      href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
-    >
-      {children}
-      <span aria-hidden="true">›</span>
-    </a>
-  );
-}
 
 export default function AvailablePuppies() {
   usePageMeta(
@@ -99,9 +85,9 @@ export default function AvailablePuppies() {
             to do so when you enquire.
           </p>
           <p>
-            <AnchorCTA href={asset("/puppies/process-applying#doghouse-application")}>
+            <CTAButton to="/puppies/process-applying#doghouse-application">
               Apply for a Doghouse Puppy
-            </AnchorCTA>
+            </CTAButton>
           </p>
 
           <h2>Meeting Your Puppy</h2>

@@ -76,6 +76,24 @@ other or where a decision is needed before we can proceed faithfully.
 - Effective dates for the Privacy Policy and Terms & Conditions, if you want
   them shown.
 
+## Added 2026-09-10 (post-redesign hallucination audit)
+
+14. **Guardian page CTA label.** "G ABOUT US Guardian Homes.docx" says the
+    button under "Interested in becoming a Guardian Family?" should be
+    labelled **"Apply Now"**; "ZZZC GUARDIAN HOME APPLICATION FORM.docx"
+    says **"Use a clear button: Apply to Become a Guardian Home"** leading
+    to the form. The site currently uses "Apply Now" (the global reusable
+    component, per master spec). Which label should the button use?
+
+15. **Homepage gallery photo identities.** The 16 gallery photographs'
+    filenames contain dog names (`hero-thumper.jpg`, `home-juniper.jpg`,
+    `home-bronnie.jpg`, `home-milo.jpg`, etc.). Public alt texts are all
+    generic ("Cavoodle puppy portrait", etc.), so no dog is named publicly,
+    but the names are visible in the page source. Of these, only "Milo" is
+    confirmed in the documents (stud page). Please confirm all 16 gallery
+    photographs are genuine supplied Doghouse QLD dogs, and whether any of
+    the dogs should be publicly named in alt text or captions.
+
 ## Canva design questions (from the 31-page "Website Content" design, 2026-09-10)
 
 9. **Font names.** RESOLVED 2026-09-10 by Charmaine's master design
@@ -103,3 +121,48 @@ other or where a decision is needed before we can proceed faithfully.
     on the About Cavoodles pages some ("Size and Generations:", "Shedding
     and Allergy Friendliness:", etc.) are teal in a plain rounded sans.
     Should all subheads be script, or is the mix intentional?
+
+## Added 2026-09-10 (resources/contact/legal audit)
+
+16. **Contact page social section.** The Contact page social section now
+    follows the later, more specific "ZZZF Social Media Link and Icons.docx"
+    exactly (heading "Follow The Doghouse" plus its prescribed copy and
+    icon labels) instead of the older Resources-section copy. Please confirm
+    this is your preference.
+
+17. **Privacy Policy and Terms "Last updated".** Both documents say the
+    date should change when the pages are materially updated, but neither
+    page currently shows a visible "Last updated" line. Should they, and if
+    so what date should they show?
+
+18. **Blog empty library.** With no posts yet, the Blog shows your approved
+    sentence "It's a growing collection, so there will always be something
+    new to come back and explore." Happy with that, or would you like
+    different wording?
+
+19. **Search microcopy.** The FAQ and Blog search boxes use functional UI
+    text not specified in the documents (e.g. placeholder "Type a keyword,
+    for example grooming or vaccinations", "No questions match your search.
+    Try a different keyword."). Acceptable as-is, or would you like to
+    supply your own wording?
+
+20. **Form system messages.** The shared form components use generic
+    functional messages ("Please complete this field.", "Please enter a
+    valid email address.", "Sending...", the honest "being connected"
+    notice, and the send-failure notice). Acceptable as-is?
+
+21. **Blog approved extras.** The Resources document approves an "Explore
+    the Blog" set of eight category-description cards and a "Looking for
+    something in particular?" section with five internal links. These are
+    not built yet. Should we build them, or do you prefer the simpler
+    current Blog layout?
+
+22. **Contact page SEO title.** The site uses "Contact The Doghouse QLD |
+    Cavoodle Breeder Queensland" (the SEO document's suggested title for
+    this page). Happy for this to be final?
+
+23. **Form fallback on the Contact page.** RESOLVED 2026-09-10: the
+    "being connected" / send-failure notices on the Contact Us page itself
+    previously pointed visitors at the Contact Us page (circular). They now
+    point at the Facebook and Instagram links below the form on that page;
+    all other forms still point at the Contact Us page.

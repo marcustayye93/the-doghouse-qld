@@ -279,3 +279,120 @@ Instructions.docx", "ZZZL Final Master Site Map and Build Instructions.docx").
 ---
 
 *End of report. No site files were edited; this is a report only.*
+
+---
+
+## Post-redesign hallucination audit — 2026-09-10
+
+**Scope:** full re-audit of `~/workspace/doghouse-qld/src` against the 45 handover
+`.docx` files plus `docs/handover/COPY_FOR_LOVABLE_MASTER_DESIGN_TYPOGRAPHY_NAVIGATION.md`
+(master spec, overrides on conflict). Four parallel section auditors covered
+Home+About Us, Puppies (incl. the two new pages), Our Dogs+Cavoodles+Training+Deli,
+and Resources+Contact+Legal+404+forms+metadata+images. New pages were additionally
+verified programmatically: every docx copy paragraph checked present in the built
+source, and every visible string in the built pages checked present in the docx.
+
+**Result: no invented public copy found anywhere.** All visible strings trace
+verbatim (or as doc-grounded SEO summaries, standard practice) to the documents.
+Zero em/en dashes in `src` and in all 44 prerendered HTML files (verified by
+codepoint scan; earlier grep hits were locale false positives on ™). Australian
+English throughout. No Parisienne/Lora/Inter remnants. No external image URLs;
+every referenced photo exists under `public/images/photos/`. No photographed dog
+is publicly named except where documents support it (see Q15).
+
+### New-page verbatim verification (programmatic, both directions)
+
+- `DoghouseMethod.tsx` vs `XXXX_The_Doghouse_Method.docx`: 137 copy paragraphs
+  checked, 0 missing; 140 visible strings checked against the docx, 0 added.
+- `FirstEightWeeks.tsx` vs `XXXXX_The_first_8_weeks.docx`: 154 copy paragraphs
+  checked, 0 missing; 157 visible strings checked against the docx, 0 added.
+- Read more sits directly beneath the final opening sentence; Read less directly
+  beneath the final extended sentence; all 20 Method sections and all 16
+  Eight-Weeks sections present in docx order with the specified image alternation.
+
+### Fixes made during this audit (local only, committed, not pushed)
+
+1. **Restored missing approved landing intros** (verbatim, no card grids per
+   master spec §13/§245): About Us (B.docx), Puppies (H.docx), Our Dogs (S.docx)
+   in `SectionHub.tsx`. The pathway/card grids stay removed; dropdown nav covers
+   subsection access.
+2. **Removed unapproved decorative chevrons** (`›`) from shared `CTAButton` and
+   the Faq Contact Us button.
+3. **Unified duplicate Apply Now/CTA components**: `ProcessApplying.tsx`,
+   `AvailablePuppies.tsx`, `MasterWaitlist.tsx` now use the shared
+   `CTAButton`/`ApplyNowButton`; removed local `AnchorCTA`/`ScrollCTA` copies.
+4. **`ScrollToTop` now honours hash anchors** instead of always scrolling to top.
+5. **`usePageMeta` suffix-smart**: titles already ending in the site name are
+   used verbatim (lets doc-specified SEO titles survive client hydration).
+6. **Contact page metadata aligned**: client title now the Z-doc suggested
+   `Contact The Doghouse QLD | Cavoodle Breeder Queensland`; client
+   description aligned to the prerendered doc-grounded one.
+7. **Privacy/Terms prerendered descriptions aligned to doc-mandated verbatim**
+   values (ZZ §11 SEO, ZZZ §12 SEO). Titles already matched.
+8. **Current Litters meta softened** to the honest `Current Litters at The
+   Doghouse QLD.` (was promising litter journeys the bare holding page lacks).
+9. **Contact page circular form notice fixed**: the "being connected" /
+   send-failure fallback on the Contact Us page itself no longer links to the
+   Contact Us page; it points at the Facebook/Instagram links below the form
+   (`isContactPage` prop in `forms.tsx`). All other forms still link to
+   Contact Us.
+10. **Doghouse Deli signup moved** out of the collapsed ReadMore region to its
+    own always-visible section (anchor target was hidden; Read less now sits
+    directly under the final extended sentence per master spec §19).
+11. **Doubled document titles fixed** on Cavoodle Care, Blog, FAQ (were
+    `X | The Doghouse QLD | The Doghouse QLD` after client hydration).
+12. **Removed leaked build-instruction paragraphs** from Cavoodle Care
+    (`Create internal links for each.`, `[Read less]`).
+13. **Blog empty-library copy** replaced with the approved sentence "It's a
+    growing collection, so there will always be something new to come back and
+    explore."; search heading/placeholder corrected to the doc's "Search Blog".
+14. **Contact page social section** rebuilt to follow ZZZF exactly (heading
+    `Follow The Doghouse`, prescribed copy, accessible icon labels).
+15. **Guardian application** verified verbatim from ZZZC (all labels, options,
+    helper text, acknowledgements, both success messages); G-doc long form
+    correctly superseded per ZZZC's explicit instruction.
+
+### Known remaining gaps (not hallucinations; awaiting Charmaine)
+
+- Current Litters approved build still outstanding (honest bare holding page).
+- Blog approved extras not built: `Explore the Blog` category cards (8),
+  `Looking for something in particular?` link section (Q21 asks preference).
+- Privacy/Terms show no visible `Last updated` line (Q17).
+- Final photographs still to be supplied (Method opening image, 16 Eight-Weeks
+  stage images, Deli per-protein photos, litter/program photos).
+
+### Judgement calls recorded (not changed)
+
+- **PhotoPlaceholder wording** ("Photograph to be supplied by The Doghouse
+  QLD."): the documents mandate holding the image positions ("Leave a
+  prominent square image area", "OWNER IMAGE REQUIRED"). The wording is a
+  clearly-marked holding label, not presented as approved copy; both section
+  auditors judged it honest. Kept.
+- **Gallery cycle 5.5s vs doc A "approximately three seconds"**: master spec
+  (overriding) requires "enough time to view each group" with no number;
+  "approximately" gives latitude. Kept at 5.5s.
+- **Functional UI microcopy** (form validation messages, search placeholders,
+  no-result lines, `Sending...`, connection-pending notices): not in the docs
+  but necessary for the UI to function; flagged in questions Q19/Q20 rather
+  than removed.
+- **Retired girls' stories** appear on both Our Girls (T.docx-mandated) and
+  Retired & Legacy Dogs (S.docx pathway): same approved copy, a design
+  decision, not invented.
+- **Related-page link grids on content pages**: master spec's card-grid ban
+  applies to section landing pages only; modest related-page nav at content
+  page bottoms is explicitly retained by master spec §248.
+
+### Validation (2026-09-10, after all fixes)
+
+- `npx tsc --noEmit`: clean.
+- Production build + prerender: 44 pages, 0 failures.
+- Preview build (`VITE_PREVIEW_BASE=/the-doghouse-qld/`): clean.
+- Internal-link check: 0 broken links.
+- Em/en dash scan (codepoint): 0 in `src`, 0 in built HTML.
+- Forbidden-font scan: no Parisienne/Lora/Inter references in `src` or built CSS.
+- Image-reference integrity: every `public/images/photos/` reference resolves;
+  no external image URLs.
+- Committed locally to `main`; NOT pushed (standing rule).
+
+*New questions for Charmaine from this audit are Q14-Q23 in
+`hidden_audit/QUESTIONS_FOR_CHARMAINE.md`.*

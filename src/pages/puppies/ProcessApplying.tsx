@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { asset, usePageMeta, PageHero, ReadMore, CTAButton, PawDivider } from '../../components/ui';
+import { asset, usePageMeta, PageHero, ReadMore, CTAButton, PawDivider, ApplyNowButton } from '../../components/ui';
 import {
   FormShell,
   Field,
@@ -10,19 +10,6 @@ import {
   RadioGroup,
   inputClass,
 } from '../../components/forms';
-
-/** In-page anchor button matching CTAButton styling (native smooth scroll). */
-function ApplyNowButton() {
-  return (
-    <a
-      href="#doghouse-application"
-      className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
-    >
-      Apply Now
-      <span aria-hidden="true">›</span>
-    </a>
-  );
-}
 
 /** Card wrapper for each numbered form section. */
 function FormSection({ title, children }: { title: string; children: ReactNode }) {
@@ -93,7 +80,7 @@ export default function ProcessApplying() {
             </p>
             <p>It simply starts the conversation.</p>
             <p className="pt-2">
-              <ApplyNowButton />
+              <ApplyNowButton to="#doghouse-application" />
             </p>
           </>
         }
@@ -355,7 +342,7 @@ export default function ProcessApplying() {
           </ReadMore>
 
           <div className="mt-8">
-            <ApplyNowButton />
+            <ApplyNowButton to="#doghouse-application" />
           </div>
 
           <div id="doghouse-application" className="scroll-mt-28 pt-4">

@@ -38,6 +38,7 @@ export function FormShell({
   errorMessages = {},
   requiredGroups = [],
   fieldValidators = {},
+  isContactPage = false,
 }: {
   formName: string;
   children: ReactNode;
@@ -50,6 +51,12 @@ export function FormShell({
   requiredGroups?: { key: string; names: string[]; message: string }[];
   /** Optional per-field format checks, keyed by field name. Run on non-empty values; the message shows beside the field when the test fails. */
   fieldValidators?: Record<string, { test: (value: string) => boolean; message: string }>;
+  /**
+   * Set on the Contact Us page itself, where the generic "contact us via the
+   * Contact Us page" fallback would link to the page the visitor is already on.
+   * Instead the fallback points at the Facebook/Instagram links below the form.
+   */
+  isContactPage?: boolean;
 }) {
   const [status, setStatus] = useState<Status>('idle');
   const [errors, setErrors] = useState<ErrorMap>({});
@@ -190,15 +197,23 @@ export function FormShell({
         {children}
         {status === 'unconfigured' && (
           <p role="alert" className="rounded-xl border border-honey/40 bg-honey/10 p-4 text-sm leading-relaxed text-bark">
-            Our online form system is being connected. Please contact us via the{' '}
-            <a href="/resources/contact-us" className="font-bold text-branddark underline">Contact Us</a>{' '}
-            page in the meantime and we will help you directly.
+            {isContactPage ? (
+              <>Our online form system is being connected. Please try again soon, or reach out via our Facebook or Instagram pages below.</>
+            ) : (
+              <>Our online form system is being connected. Please contact us via the{' '}
+              <a href="/resources/contact-us" className="font-bold text-branddark underline">Contact Us</a>{' '}
+              page in the meantime and we will help you directly.</>
+            )}
           </p>
         )}
         {status === 'error' && (
           <p role="alert" className="rounded-xl border border-red-300 bg-red-50 p-4 text-sm text-ink">
-            Something went wrong sending your submission. Please try again, or contact us via the{' '}
-            <a href="/resources/contact-us" className="font-bold text-branddark underline">Contact Us</a> page.
+            {isContactPage ? (
+              <>Something went wrong sending your submission. Please try again, or reach out via our Facebook or Instagram pages below.</>
+            ) : (
+              <>Something went wrong sending your submission. Please try again, or contact us via the{' '}
+              <a href="/resources/contact-us" className="font-bold text-branddark underline">Contact Us</a> page.</>
+            )}
           </p>
         )}
         <button

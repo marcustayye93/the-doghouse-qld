@@ -40,39 +40,7 @@ function LinkCard({ to, title, blurb }: { to: string; title: string; blurb: stri
   );
 }
 
-/** Confirmed active accounts only - never invent social URLs. */
-function SocialIcons() {
-  const iconClass =
-    'flex h-11 w-11 items-center justify-center rounded-full bg-brand/10 text-branddark transition hover:bg-brand hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand';
-  return (
-    <div className="mt-4 flex gap-3">
-      <a
-        href={siteConfig.socials.facebook}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="The Doghouse QLD on Facebook"
-        className={iconClass}
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.6-.1-1.4-.2-2.2-.2-2.2 0-3.7 1.3-3.7 3.8V11H8v3h2.5v7h3z" />
-        </svg>
-      </a>
-      <a
-        href={siteConfig.socials.instagram}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="The Doghouse QLD on Instagram"
-        className={iconClass}
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-          <rect x="4" y="4" width="16" height="16" rx="4.5" />
-          <circle cx="12" cy="12" r="3.6" />
-          <circle cx="17" cy="7" r="1.3" fill="currentColor" stroke="none" />
-        </svg>
-      </a>
-    </div>
-  );
-}
+/** Post-form content section wrapper. */
 
 function PostFormSection({ children }: { children: ReactNode }) {
   return <div className="prose-dog mt-12">{children}</div>;
@@ -80,8 +48,8 @@ function PostFormSection({ children }: { children: ReactNode }) {
 
 export default function ContactUs() {
   usePageMeta(
-    'Contact Us',
-    'Get in touch with The Doghouse QLD about puppy enquiries, guardian homes, Doghouse Deli, training or general Cavoodle questions.'
+    'Contact The Doghouse QLD | Cavoodle Breeder Queensland',
+    'Get in touch with The Doghouse QLD in Caboolture, Queensland. Puppy enquiries, Guardian Homes, Doghouse Deli, training and general Cavoodle questions.'
   );
   return (
     <main>
@@ -131,6 +99,7 @@ export default function ContactUs() {
             <FormShell
               formName="contact-us"
               submitLabel="Send Message"
+              isContactPage
               successHeading="Thank you!"
               successMessage="Your message has been sent successfully. We'll be in touch as soon as we can."
               errorMessages={contactErrorMessages}
@@ -323,19 +292,40 @@ export default function ContactUs() {
         </div>
 
         <PostFormSection>
-          <h2>Follow The Doghouse QLD</h2>
-          <p>Want to keep up with what&apos;s happening at The Doghouse?</p>
+          <h2>Follow The Doghouse</h2>
           <p>
-            Our social media is where you&apos;ll see plenty of the everyday moments that
-            don&apos;t necessarily need an entire website page.
+            Follow us on Facebook and Instagram for a little more of everyday life at The Doghouse,
+            including our dogs, puppies, litter updates and behind-the-scenes moments.
           </p>
-          <p>
-            Follow along for litter announcements, puppy updates, available puppy information,
-            videos, Doghouse life, educational content and, inevitably, plenty of Cavoodle
-            personalities.
-          </p>
+          <div className="mt-4 flex items-center gap-8">
+            <a
+              href={siteConfig.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Doghouse QLD on Facebook"
+              className="inline-flex items-center gap-2 font-semibold text-branddark underline-offset-4 transition hover:text-brand hover:underline"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.6-.1-1.4-.2-2.2-.2-2.2 0-3.7 1.3-3.7 3.8V11H8v3h2.5v7h3z" />
+              </svg>
+              Facebook
+            </a>
+            <a
+              href={siteConfig.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Doghouse QLD on Instagram"
+              className="inline-flex items-center gap-2 font-semibold text-branddark underline-offset-4 transition hover:text-brand hover:underline"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="4.5" />
+                <circle cx="12" cy="12" r="3.6" />
+                <circle cx="17" cy="7" r="1.3" fill="currentColor" stroke="none" />
+              </svg>
+              Instagram
+            </a>
+          </div>
         </PostFormSection>
-        <SocialIcons />
 
         <PostFormSection>
           <h2>A little note before visiting</h2>

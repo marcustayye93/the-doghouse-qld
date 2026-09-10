@@ -93,7 +93,7 @@ function SocialIcons() {
         href={siteConfig.socials.facebook}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="The Doghouse QLD on Facebook"
+        aria-label="Follow The Doghouse QLD on Facebook"
         className={iconClass}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -104,7 +104,7 @@ function SocialIcons() {
         href={siteConfig.socials.instagram}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="The Doghouse QLD on Instagram"
+        aria-label="Follow The Doghouse QLD on Instagram"
         className={iconClass}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
@@ -119,7 +119,7 @@ function SocialIcons() {
 
 export default function Blog() {
   usePageMeta(
-    'Cavoodle Blog & Puppy Advice | The Doghouse QLD',
+    'Cavoodle Blog & Puppy Advice',
     "Practical Cavoodle advice, puppy information, training and grooming tips, videos and behind-the-scenes moments from The Doghouse QLD."
   );
   const [query, setQuery] = useState('');
@@ -204,14 +204,14 @@ export default function Blog() {
         </div>
         <div className="mt-4 max-w-xl">
           <label htmlFor="blog-search" className="mb-2 block text-sm font-semibold text-ink">
-            Search the Blog
+            Search Blog
           </label>
           <input
             id="blog-search"
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search articles and videos"
+            placeholder="Search Blog"
             className="w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-ink placeholder:text-ink/35 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
           />
         </div>
@@ -230,12 +230,8 @@ export default function Blog() {
         <div className="mt-6">
           {filtered.length === 0 ? (
             <div className="rounded-2xl border border-brand/10 bg-white p-8 text-center shadow-sm">
-              <h3 className="font-bold text-2xl  text-bark">
-                Our first articles are on the way.
-              </h3>
               <p className="mx-auto mt-2 max-w-xl text-bark">
-                We&apos;re preparing our first articles and videos now and will publish them here,
-                newest first, as they are ready. Check back soon.
+                It&apos;s a growing collection, so there will always be something new to come back and explore.
               </p>
             </div>
           ) : (

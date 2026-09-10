@@ -818,94 +818,6 @@ export default function DoghouseDeli() {
             */}
             {SHOW_DELI_SUBSCRIPTION_POLICIES && <DeliSubscriptionManagementStructure />}
 
-            <div
-              id="deli-signup"
-              className="my-10 scroll-mt-24 rounded-2xl border border-brand/15 bg-white p-6 shadow-sm md:p-8"
-            >
-              {/*
-                OWNER: Doghouse Deli mailing audience. Per ZZZE this must remain a dedicated,
-                separate audience (not merged with Master Waitlist or Guardian Opportunities).
-                Connect via siteConfig.mailingLists.doghouseDeli when the mailing provider is
-                chosen. Do not invent the provider.
-              */}
-              <h2 className="!mt-0 font-bold text-bark">Join the Doghouse Deli List</h2>
-              <p className="font-bold text-bark">Love the sound of Doghouse Deli?</p>
-              <p className="text-bark">
-                Join our email list to hear about Doghouse Deli news, new treat boxes, product
-                launches and other Deli updates.
-              </p>
-              <div className="mt-6">
-                <FormShell
-                  formName="doghouse-deli-signup"
-                  submitLabel="Join the Doghouse Deli List"
-                  successHeading="Welcome to Doghouse Deli!"
-                  successMessage="Thanks for joining us. You're now on our list to receive Doghouse Deli news, new product announcements and other Deli updates."
-                >
-                  <Field label="Your name" name="name" required placeholder="Your name" />
-                  <Field
-                    label="Email address"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="you@example.com"
-                  />
-                  <div>
-                    <h3 className="!mb-1 !mt-0 text-base font-bold">
-                      Tell Us a Little About Your Dog
-                    </h3>
-                    <p className="text-sm text-bark/60">
-                      The following is optional.
-                    </p>
-                  </div>
-                  <Field
-                    label="Your dog's name"
-                    name="dog_name"
-                    placeholder="Dog's name"
-                  />
-                  <RadioGroup
-                    legend="What Life Stage Is Your Dog?"
-                    name="dog_life_stage"
-                    options={['Puppy', 'Adult', 'Senior']}
-                  />
-                  <fieldset className="text-sm font-semibold text-bark">
-                    <legend>What Would You Be Interested in Hearing About?</legend>
-                    <p className="mt-1 text-xs font-normal text-bark/60">
-                      Optional. Select all that apply.
-                    </p>
-                    <div className="mt-2 grid gap-2">
-                      {interests.map((interest) => (
-                        <label
-                          key={interest}
-                          className="flex cursor-pointer items-center gap-3 font-normal"
-                        >
-                          <input
-                            type="checkbox"
-                            name="interest"
-                            value={interest}
-                            className="h-5 w-5 shrink-0 accent-[#17A296]"
-                          />
-                          {interest}
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
-                  <CheckboxField
-                    required
-                    name="consent"
-                    label="Yes, I'd like to receive Doghouse Deli news, product updates and offers by email."
-                  />
-                  <p className="text-sm leading-relaxed text-bark">
-                    We respect your privacy. Your information will be handled in accordance with
-                    our{' '}
-                    <Link to="/privacy-policy" className={ilink}>
-                      Privacy Policy
-                    </Link>
-                    . You can unsubscribe from Doghouse Deli emails at any time.
-                  </p>
-                </FormShell>
-              </div>
-            </div>
-
             <h2>Problems with an order</h2>
             <p>
               If your delivery arrives damaged, something is missing or there is a genuine problem
@@ -962,6 +874,98 @@ export default function DoghouseDeli() {
               time.
             </p>
           </ReadMore>
+
+          {/*
+            OWNER: Doghouse Deli mailing audience. The signup form sits in its own
+            always-visible section after the expanded content so the "Join the Doghouse
+            Deli List" scroll button in the opening section always has a working
+            target (per ZZZD: "A clear button elsewhere on the Doghouse Deli page may
+            scroll directly to this signup section"). Per ZZZE this must remain a
+            dedicated, separate audience (not merged with Master Waitlist or Guardian
+            Opportunities). Connect via siteConfig.mailingLists.doghouseDeli when the
+            mailing provider is chosen. Do not invent the provider.
+          */}
+          <div
+            id="deli-signup"
+            className="my-10 scroll-mt-24 rounded-2xl border border-brand/15 bg-white p-6 shadow-sm md:p-8"
+          >
+            <h2 className="!mt-0 font-bold text-bark">Join the Doghouse Deli List</h2>
+            <p className="font-bold text-bark">Love the sound of Doghouse Deli?</p>
+            <p className="text-bark">
+              Join our email list to hear about Doghouse Deli news, new treat boxes, product
+              launches and other Deli updates.
+            </p>
+            <div className="mt-6">
+              <FormShell
+                formName="doghouse-deli-signup"
+                submitLabel="Join the Doghouse Deli List"
+                successHeading="Welcome to Doghouse Deli!"
+                successMessage="Thanks for joining us. You're now on our list to receive Doghouse Deli news, new product announcements and other Deli updates."
+              >
+                <Field label="Your name" name="name" required placeholder="Your name" />
+                <Field
+                  label="Email address"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                />
+                <div>
+                  <h3 className="!mb-1 !mt-0 text-base font-bold">
+                    Tell Us a Little About Your Dog
+                  </h3>
+                  <p className="text-sm text-bark/60">
+                    The following is optional.
+                  </p>
+                </div>
+                <Field
+                  label="Your dog's name"
+                  name="dog_name"
+                  placeholder="Dog's name"
+                />
+                <RadioGroup
+                  legend="What Life Stage Is Your Dog?"
+                  name="dog_life_stage"
+                  options={['Puppy', 'Adult', 'Senior']}
+                />
+                <fieldset className="text-sm font-semibold text-bark">
+                  <legend>What Would You Be Interested in Hearing About?</legend>
+                  <p className="mt-1 text-xs font-normal text-bark/60">
+                    Optional. Select all that apply.
+                  </p>
+                  <div className="mt-2 grid gap-2">
+                    {interests.map((interest) => (
+                      <label
+                        key={interest}
+                        className="flex cursor-pointer items-center gap-3 font-normal"
+                      >
+                        <input
+                          type="checkbox"
+                          name="interest"
+                          value={interest}
+                          className="h-5 w-5 shrink-0 accent-[#17A296]"
+                        />
+                        {interest}
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+                <CheckboxField
+                  required
+                  name="consent"
+                  label="Yes, I'd like to receive Doghouse Deli news, product updates and offers by email."
+                />
+                <p className="text-sm leading-relaxed text-bark">
+                  We respect your privacy. Your information will be handled in accordance with
+                  our{' '}
+                  <Link to="/privacy-policy" className={ilink}>
+                    Privacy Policy
+                  </Link>
+                  . You can unsubscribe from Doghouse Deli emails at any time.
+                </p>
+              </FormShell>
+            </div>
+          </div>
         </div>
       </section>
     </main>

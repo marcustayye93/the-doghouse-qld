@@ -6,7 +6,7 @@ const ilink =
 
 export default function CavoodleCare() {
   usePageMeta(
-    'Cavoodle Care Guide | The Doghouse QLD',
+    'Cavoodle Care Guide',
     'Everyday Cavoodle care from The Doghouse QLD: nutrition, exercise, dental care, preventative health, grooming and living well with your Cavoodle.'
   );
   return (
@@ -335,8 +335,6 @@ export default function CavoodleCare() {
             <h3><Link to="/resources/contact-us" className={ilink}>Contact Us</Link></h3>
             <p>Can't find the answer you're looking for?</p>
             <p>Get in touch with The Doghouse QLD.</p>
-            <p>Create internal links for each.</p>
-            <p>[Read less]</p>
           </ReadMore>
         </div>
       </section>

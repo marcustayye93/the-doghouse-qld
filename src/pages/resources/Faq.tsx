@@ -1171,7 +1171,7 @@ function FaqEntry({ idPrefix, q, a }: { idPrefix: string; q: string; a: ReactNod
 
 export default function Faq() {
   usePageMeta(
-    'Frequently Asked Questions | The Doghouse QLD',
+    'Frequently Asked Questions',
     'Straightforward answers to the questions The Doghouse QLD is asked most often about Cavoodles, puppies, health testing, grooming, pricing and more.'
   );
   const [query, setQuery] = useState('');
@@ -1256,7 +1256,7 @@ export default function Faq() {
                 to="/resources/contact-us"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
               >
-                Contact Us <span aria-hidden="true">›</span>
+                Contact Us
               </Link>
             </p>
           </div>

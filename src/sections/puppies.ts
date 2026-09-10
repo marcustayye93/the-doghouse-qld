@@ -23,7 +23,7 @@ export const puppyRoutes: RouteDef[] = [
     path: '/puppies/current-litters',
     title: 'Current Litters | The Doghouse QLD',
     description:
-      'Meet our current Doghouse litters and follow their journey through those precious first weeks of life.',
+      'Current Litters at The Doghouse QLD.',
     Component: CurrentLitters,
   },
   {

@@ -2,7 +2,6 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../config';
 
-/** Sets document title + meta description (client-side; SSR uses route meta). */
 /** Prefix a public-dir path with the configured base URL so the site also works under a subpath. */
 export function asset(path: string): string {
   const base = import.meta.env.BASE_URL || '/';
@@ -11,7 +10,11 @@ export function asset(path: string): string {
 
 export function usePageMeta(title: string, description?: string) {
   useEffect(() => {
-    document.title = `${title} | ${siteConfig.name}`;
+    // Titles that already carry the site name (e.g. doc-specified SEO titles)
+    // are used verbatim; anything else gets the standard suffix.
+    document.title = title.endsWith(siteConfig.name)
+      ? title
+      : `${title} | ${siteConfig.name}`;
     if (description) {
       let tag = document.querySelector('meta[name="description"]');
       if (tag) tag.setAttribute('content', description);
@@ -110,7 +113,8 @@ export function PageHero({
   );
 }
 
-/** Primary call-to-action button (non-Apply-Now CTAs). */
+/** Primary call-to-action button (non-Apply-Now CTAs). Hash-only targets
+ *  render as native anchors so in-page jumps keep smooth scrolling. */
 export function CTAButton({
   to,
   children,
@@ -120,13 +124,17 @@ export function CTAButton({
   children: ReactNode;
   className?: string;
 }) {
+  const cls = `inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${className}`;
+  if (to.startsWith('#')) {
+    return (
+      <a href={to} className={cls}>
+        {children}
+      </a>
+    );
+  }
   return (
-    <Link
-      to={to}
-      className={`inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${className}`}
-    >
+    <Link to={to} className={cls}>
       {children}
-      <span aria-hidden="true">›</span>
     </Link>
   );
 }
@@ -147,7 +155,9 @@ function PawPrint({ className = '' }: { className?: string }) {
  * Rounded rectangle, bright teal fill, white Aptos text; two small white paw
  * prints step on in sequence every ~5 seconds, pause, then fade away.
  * With reduced-motion preferences the paws are hidden (CSS) and the button
- * renders static. Use this for every standard Apply Now CTA site-wide.
+ * renders static. Hash-only targets render as native anchors so in-page
+ * jumps keep smooth scrolling. Use this for every standard Apply Now CTA
+ * site-wide; do not hand-roll Apply Now buttons on individual pages.
  */
 export function ApplyNowButton({
   to = '/puppies/process-applying',
@@ -156,21 +166,30 @@ export function ApplyNowButton({
   to?: string;
   className?: string;
 }) {
+  const cls = `inline-flex items-center justify-center gap-2.5 rounded-xl bg-cta px-9 py-4 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${className}`;
+  const paws = (
+    <span aria-hidden="true" className="relative inline-flex h-5 w-10 shrink-0 items-center">
+      <PawPrint className="paw-print absolute left-0 h-4 w-4 text-white" />
+      <PawPrint className="paw-print paw-print-2 absolute left-5 h-4 w-4 text-white" />
+    </span>
+  );
+  if (to.startsWith('#')) {
+    return (
+      <a href={to} className={cls}>
+        {paws}
+        Apply Now
+      </a>
+    );
+  }
   return (
-    <Link
-      to={to}
-      className={`inline-flex items-center justify-center gap-2.5 rounded-xl bg-cta px-9 py-4 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${className}`}
-    >
-      <span aria-hidden="true" className="relative inline-flex h-5 w-10 shrink-0 items-center">
-        <PawPrint className="paw-print absolute left-0 h-4 w-4 text-white" />
-        <PawPrint className="paw-print paw-print-2 absolute left-5 h-4 w-4 text-white" />
-      </span>
+    <Link to={to} className={cls}>
+      {paws}
       Apply Now
     </Link>
   );
 }
 
-/** Related-section navigation for the PUPPIES section (master spec sections 14/36). */
+/** Related-section navigation for the PUPPIES section (master spec section 16). */
 const puppySectionLinks = [
   { label: 'Available Puppies', path: '/puppies/available-puppies' },
   { label: 'Current Litters', path: '/puppies/current-litters' },

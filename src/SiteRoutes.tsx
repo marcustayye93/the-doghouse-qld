@@ -6,10 +6,19 @@ import SectionHub from './pages/SectionHub';
 import NotFound from './pages/NotFound';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    // Honour in-page anchor targets (e.g. links to #doghouse-application):
+    // scroll the target into view instead of jumping to the top of the page.
+    if (hash) {
+      const el = document.getElementById(hash.replace(/^#/, ''));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 

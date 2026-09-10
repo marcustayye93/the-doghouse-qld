@@ -1,34 +1,7 @@
-import type { ReactNode } from 'react';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { asset, usePageMeta, PageHero, CTAButton, PawDivider } from '../../components/ui';
 import { FormShell, Field, CheckboxField, RadioGroup } from '../../components/forms';
-
-/** CTAButton styling for links that include a hash anchor (native navigation). */
-function AnchorCTA({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <a
-      href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
-    >
-      {children}
-      <span aria-hidden="true">›</span>
-    </a>
-  );
-}
-
-/** In-page anchor button matching CTAButton styling (native smooth scroll). */
-function ScrollCTA({ to, children }: { to: string; children: ReactNode }) {
-  return (
-    <a
-      href={to}
-      className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
-    >
-      {children}
-      <span aria-hidden="true">›</span>
-    </a>
-  );
-}
 
 /** Optional multi-select checkboxes, matching the shared form styling. */
 function MultiCheckbox({
@@ -96,7 +69,7 @@ export default function MasterWaitlist() {
               will be available to you. It simply makes sure you&apos;re in the loop.
             </p>
             <p className="pt-2">
-              <ScrollCTA to="#join-the-master-waitlist">Join the Master Waitlist</ScrollCTA>
+              <CTAButton to="#join-the-master-waitlist">Join the Master Waitlist</CTAButton>
             </p>
           </>
         }
@@ -321,9 +294,9 @@ export default function MasterWaitlist() {
             helps us begin considering whether one of our puppies may be the right fit.
           </p>
           <p>
-            <AnchorCTA href={asset("/puppies/process-applying#doghouse-application")}>
+            <CTAButton to="/puppies/process-applying#doghouse-application">
               Learn About Our Puppy Process &amp; Apply
-            </AnchorCTA>
+            </CTAButton>
           </p>
 
           <h2>No Longer Looking for a Puppy?</h2>

@@ -8,14 +8,14 @@ export const legalRoutes: RouteDef[] = [
     path: '/privacy-policy',
     title: 'Privacy Policy | The Doghouse QLD',
     description:
-      'How The Doghouse QLD collects, uses, shares and protects your personal information, including mailing lists and your rights.',
+      'Read The Doghouse QLD Privacy Policy and learn how personal information provided through our website, enquiries, applications and services is handled.',
     Component: PrivacyPolicy,
   },
   {
     path: '/terms-and-conditions',
     title: 'Website Terms & Conditions | The Doghouse QLD',
     description:
-      'Read the Website Terms & Conditions for The Doghouse QLD, covering website use, puppies, educational content, intellectual property and services.',
+      'Read the Website Terms & Conditions for The Doghouse QLD, including information about website use, puppies, educational content, intellectual property and services.',
     Component: TermsConditions,
   },
 ];
