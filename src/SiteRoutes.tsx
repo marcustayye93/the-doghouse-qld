@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { Header, Footer } from './components/chrome';
+import { Header, HomeMasthead, Footer } from './components/chrome';
 import { allRoutes, hubPaths, hubMeta } from './routes';
 import SectionHub from './pages/SectionHub';
 import NotFound from './pages/NotFound';
@@ -14,10 +14,14 @@ function ScrollToTop() {
 }
 
 export function SiteRoutes() {
+  // The homepage carries its own masthead (large centred logo + nav between
+  // two rules, per master spec sections 1-2); inner pages use the compact header.
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
   return (
     <>
       <ScrollToTop />
-      <Header />
+      {isHome ? <HomeMasthead /> : <Header />}
       <Routes>
         {allRoutes.map(({ path, Component }) => (
           <Route key={path} path={path} element={<Component />} />

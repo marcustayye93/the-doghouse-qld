@@ -72,7 +72,7 @@ const treatCollection: { protein: string; treats: string[] }[] = [
 function TreatPlaceholder({ name }: { name: string }) {
   return (
     <div className="flex aspect-[3/4] items-center justify-center rounded-2xl border-2 border-dashed border-brand/30 bg-white p-4 text-center shadow-sm">
-      <span className="text-sm font-semibold leading-snug text-ink/60">{name}</span>
+      <span className="text-sm font-semibold leading-snug text-bark/60">{name}</span>
     </div>
   );
 }
@@ -89,7 +89,7 @@ function ProteinImagePlaceholder({ protein }: { protein: string }) {
       aria-label={`${protein} treat photograph to be supplied by The Doghouse QLD`}
       className="mx-auto flex aspect-square w-full max-w-[220px] items-center justify-center rounded-xl border-2 border-dashed border-brand/30 bg-white p-4 text-center shadow-sm sm:mx-0 sm:max-w-none"
     >
-      <span className="text-sm font-semibold leading-snug text-ink/50">
+      <span className="text-sm font-semibold leading-snug text-bark/50">
         {protein} image to be supplied
       </span>
     </div>
@@ -828,9 +828,9 @@ export default function DoghouseDeli() {
                 Connect via siteConfig.mailingLists.doghouseDeli when the mailing provider is
                 chosen. Do not invent the provider.
               */}
-              <h2 className="!mt-0 font-display text-brand">Join the Doghouse Deli List</h2>
-              <p className="font-serif font-bold text-bark">Love the sound of Doghouse Deli?</p>
-              <p className="font-serif text-bark">
+              <h2 className="!mt-0 font-bold text-bark">Join the Doghouse Deli List</h2>
+              <p className="font-bold text-bark">Love the sound of Doghouse Deli?</p>
+              <p className="text-bark">
                 Join our email list to hear about Doghouse Deli news, new treat boxes, product
                 launches and other Deli updates.
               </p>
@@ -853,7 +853,7 @@ export default function DoghouseDeli() {
                     <h3 className="!mb-1 !mt-0 text-base font-bold">
                       Tell Us a Little About Your Dog
                     </h3>
-                    <p className="text-sm text-ink/60">
+                    <p className="text-sm text-bark/60">
                       The following is optional.
                     </p>
                   </div>
@@ -867,9 +867,9 @@ export default function DoghouseDeli() {
                     name="dog_life_stage"
                     options={['Puppy', 'Adult', 'Senior']}
                   />
-                  <fieldset className="text-sm font-semibold text-ink">
+                  <fieldset className="text-sm font-semibold text-bark">
                     <legend>What Would You Be Interested in Hearing About?</legend>
-                    <p className="mt-1 text-xs font-normal text-ink/60">
+                    <p className="mt-1 text-xs font-normal text-bark/60">
                       Optional. Select all that apply.
                     </p>
                     <div className="mt-2 grid gap-2">
@@ -894,7 +894,7 @@ export default function DoghouseDeli() {
                     name="consent"
                     label="Yes, I'd like to receive Doghouse Deli news, product updates and offers by email."
                   />
-                  <p className="font-serif text-sm leading-relaxed text-bark">
+                  <p className="text-sm leading-relaxed text-bark">
                     We respect your privacy. Your information will be handled in accordance with
                     our{' '}
                     <Link to="/privacy-policy" className={ilink}>

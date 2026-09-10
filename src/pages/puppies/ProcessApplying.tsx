@@ -27,8 +27,8 @@ function ApplyNowButton() {
 /** Card wrapper for each numbered form section. */
 function FormSection({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-ink/10 bg-white p-6 shadow-sm md:p-8">
-      <h3 className="font-display text-3xl  leading-snug text-brand">{title}</h3>
+    <div className="rounded-2xl border border-bark/30 bg-white p-6 shadow-sm md:p-8">
+      <h3 className="font-bold text-3xl  leading-snug text-bark">{title}</h3>
       <div className="mt-5 grid gap-5">{children}</div>
     </div>
   );
@@ -548,7 +548,7 @@ export default function ProcessApplying() {
                     />
                   </div>
                   {journey === JOURNEY_ENQUIRING && (
-                    <label className="block text-sm font-semibold text-ink">
+                    <label className="block text-sm font-semibold text-bark">
                       Which puppy are you interested in?
                       <input
                         type="text"
@@ -596,7 +596,7 @@ export default function ProcessApplying() {
                       name="preferred_size"
                       options={['Teacup', 'Toy', 'Mini', 'No preference']}
                     />
-                    <p className="mt-2 text-sm font-normal text-ink/70">
+                    <p className="mt-2 text-sm font-normal text-bark/70">
                       Expected adult size is an estimate rather than a guarantee.
                     </p>
                   </div>
@@ -627,7 +627,7 @@ export default function ProcessApplying() {
                       label="Is there anything you particularly hope to do with your dog?"
                       name="hoped_activities"
                     />
-                    <p className="mt-2 text-sm font-normal text-ink/70">
+                    <p className="mt-2 text-sm font-normal text-bark/70">
                       For example, family companionship, walking, travelling, an active
                       lifestyle, training activities or simply sharing everyday family life.
                     </p>
@@ -653,7 +653,7 @@ export default function ProcessApplying() {
                 </FormSection>
 
                 <FormSection title="Before You Submit">
-                  <p className="font-serif text-sm leading-relaxed text-bark">
+                  <p className="text-sm leading-relaxed text-bark">
                     I understand that submitting a Doghouse Puppy Application does not guarantee
                     that I will be offered a puppy. I understand that The Doghouse QLD considers
                     the individual puppy, the family and the suitability of the match when placing

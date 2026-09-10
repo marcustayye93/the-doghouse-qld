@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { asset, usePageMeta, CTAButton, PawDivider, SquareImage } from '../../components/ui';
+import { asset, usePageMeta, ApplyNowButton, CTAButton, PawDivider, SquareImage } from '../../components/ui';
 import { PhotoPlaceholder } from '../dogs/PhotoPlaceholder';
 
 const colourTiles = [
@@ -66,7 +66,7 @@ export default function AboutCavoodles() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-branddark">
               Cavoodles
             </p>
-            <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
+            <h1 className="font-display text-5xl font-bold  leading-tight text-brand md:text-6xl">
               About Cavoodles
             </h1>
             <div className="prose-dog mt-5">
@@ -618,7 +618,7 @@ export default function AboutCavoodles() {
       <section className="mx-auto max-w-6xl px-5 py-12 text-center">
         <PawDivider />
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <CTAButton to="/puppies/process-applying">Apply Now</CTAButton>
+          <ApplyNowButton />
           <Link
             to="/cavoodles/generations"
             className="font-semibold text-branddark underline decoration-brand/40 underline-offset-4 hover:decoration-brand"

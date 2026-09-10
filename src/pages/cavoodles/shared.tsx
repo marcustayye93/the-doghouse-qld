@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { CTAButton, PawDivider, SquareImage } from '../../components/ui';
+import { ApplyNowButton, PawDivider, SquareImage } from '../../components/ui';
 
 const siblingLinks = [
   { label: 'About Cavoodles', path: '/cavoodles/about' },
@@ -32,7 +32,7 @@ export function CavoodleHero({
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-branddark">
             Cavoodles
           </p>
-          <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
+          <h1 className="font-display text-5xl font-bold  leading-tight text-brand md:text-6xl">
             {title}
           </h1>
           <div className="prose-dog mt-5">{intro}</div>
@@ -49,7 +49,7 @@ export function CavoodleFooter({ currentPath }: { currentPath: string }) {
     <section className="mx-auto max-w-6xl px-5 py-12 text-center">
       <PawDivider />
       <div className="mt-6">
-        <CTAButton to="/puppies/process-applying">Apply Now</CTAButton>
+        <ApplyNowButton />
       </div>
       <nav aria-label="More about Cavoodles" className="mt-8">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-branddark">

@@ -34,8 +34,8 @@ function LinkCard({ to, title, blurb }: { to: string; title: string; blurb: stri
       to={to}
       className="block rounded-2xl border border-brand/15 bg-white p-5 shadow-sm transition hover:border-brand/40 hover:shadow"
     >
-      <h3 className="!mt-0 font-display text-3xl text-brand">{title}</h3>
-      <p className="mt-1 font-serif text-sm leading-relaxed text-bark">{blurb}</p>
+      <h3 className="!mt-0 font-bold text-3xl text-bark">{title}</h3>
+      <p className="mt-1 text-sm leading-relaxed text-bark">{blurb}</p>
     </Link>
   );
 }
@@ -122,8 +122,8 @@ export default function ContactUs() {
 
       <section id="contact-form" className="mx-auto max-w-2xl scroll-mt-28 px-5 pb-16">
         <div className="rounded-2xl border border-brand/15 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="!mt-0 font-display text-4xl  text-brand">Send Us a Message</h2>
-          <p className="mt-3 font-serif leading-relaxed text-bark">
+          <h2 className="!mt-0 font-bold text-4xl  text-bark">Send Us a Message</h2>
+          <p className="mt-3 leading-relaxed text-bark">
             Have a question or would like to get in touch? Send us a message below and we&apos;ll
             get back to you as soon as we can.
           </p>
@@ -164,7 +164,7 @@ export default function ContactUs() {
                 rows={6}
                 placeholder="Tell us a little about how we can help."
               />
-              <p className="font-serif text-sm leading-relaxed text-bark">
+              <p className="text-sm leading-relaxed text-bark">
                 We respect your privacy. Information submitted through this form will be handled in
                 accordance with our{' '}
                 <Link to="/privacy-policy" className={ilink}>

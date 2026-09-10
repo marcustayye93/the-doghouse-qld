@@ -17,7 +17,7 @@ export default function RetiredLegacy() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-branddark">
               Our Dogs
             </p>
-            <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
+            <h1 className="font-display text-5xl font-bold leading-tight text-brand md:text-6xl">
               Retired &amp; Legacy Dogs
             </h1>
             <div className="prose-dog mt-5">
@@ -38,7 +38,7 @@ export default function RetiredLegacy() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="font-display text-4xl  text-brand md:text-5xl">Retired Girls</h2>
+        <h2 className="font-bold text-4xl  text-bark md:text-5xl">Retired Girls</h2>
         <div className="mt-10 space-y-14">
           {retiredGirls.map((girl, i) => (
             <div key={girl.name}>
@@ -54,7 +54,7 @@ export default function RetiredLegacy() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="font-display text-4xl  text-brand md:text-5xl">
+        <h2 className="font-bold text-4xl  text-bark md:text-5xl">
           Retired &amp; Legacy Boys
         </h2>
         <div className="mt-10 space-y-14">

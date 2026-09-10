@@ -41,7 +41,7 @@ function MultiCheckbox({
   options: string[];
 }) {
   return (
-    <fieldset className="text-sm font-semibold text-ink">
+    <fieldset className="text-sm font-semibold text-bark">
       <legend>{legend}</legend>
       <div className="mt-2 grid gap-2">
         {options.map((o) => (
@@ -115,7 +115,7 @@ export default function MasterWaitlist() {
 
           <div
             id="join-the-master-waitlist"
-            className="mt-10 scroll-mt-28 rounded-2xl border border-ink/10 bg-white p-6 shadow-sm md:p-8"
+            className="mt-10 scroll-mt-28 rounded-2xl border border-bark/30 bg-white p-6 shadow-sm md:p-8"
           >
             <h2 className="!mt-0">Join the Master Waitlist</h2>
             <p>Joining is free and only takes a moment.</p>
@@ -164,7 +164,7 @@ export default function MasterWaitlist() {
                 />
               </FormShell>
             </div>
-            <p className="mt-4 font-serif text-sm leading-relaxed text-bark">
+            <p className="mt-4 text-sm leading-relaxed text-bark">
               We respect your privacy. Your information will be handled in accordance with our{' '}
               <Link
                 to="/privacy-policy"
@@ -266,7 +266,7 @@ export default function MasterWaitlist() {
             next step in our puppy process.
           </p>
 
-          <div className="rounded-2xl border border-ink/10 bg-white p-6 shadow-sm md:p-8">
+          <div className="rounded-2xl border border-bark/30 bg-white p-6 shadow-sm md:p-8">
             <h2 className="!mt-0">Expression of Interest</h2>
             <div className="mt-6">
               <FormShell
@@ -275,12 +275,12 @@ export default function MasterWaitlist() {
                 successHeading="Thank You"
                 successMessage="Thank you for your interest in our Doghouse puppies. We've received your Expression of Interest and will be in touch so we can continue the conversation. Please remember that submitting an Expression of Interest does not reserve or allocate a puppy."
               >
-                <h3 className="font-display text-3xl text-brand">Your Details</h3>
+                <h3 className="font-bold text-3xl text-bark">Your Details</h3>
                 <Field label="Full Name" name="full_name" type="text" required autoComplete="name" />
                 <Field label="Email Address" name="email" type="email" required autoComplete="email" />
                 <Field label="Mobile Number" name="mobile" type="tel" required autoComplete="tel" />
                 {/* OWNER: Populate the interest options from puppies marked Available once puppy records are supplied. */}
-                <label className="block text-sm font-semibold text-ink">
+                <label className="block text-sm font-semibold text-bark">
                   Which puppy are you interested in?
                   <select
                     name="puppy_interest"
@@ -299,7 +299,7 @@ export default function MasterWaitlist() {
                     You&apos;re enquiring about {puppyParam}.
                   </p>
                 )}
-                <label className="block text-sm font-semibold text-ink">
+                <label className="block text-sm font-semibold text-bark">
                   Is there anything you&apos;d like to ask or tell us?
                   <textarea
                     name="message"

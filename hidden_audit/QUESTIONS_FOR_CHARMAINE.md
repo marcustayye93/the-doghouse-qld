@@ -37,9 +37,12 @@ other or where a decision is needed before we can proceed faithfully.
 
 6. **Missing approved page builds.** "ZZZL" references approved builds of the
    Current Litters, The Doghouse Method™ and First Eight Weeks pages, but
-   those builds are not in the supplied file set. The site currently shows
-   honest holding pages with no invented content. Could you please send the
-   approved builds or the copy for these three pages?
+   those builds were not in the original file set. On 2026-09-10 Charmaine
+   supplied the two missing builds: "XXXX_The_Doghouse_Method.docx" and
+   "XXXXX_The_first_8_weeks.docx" (both now built). The approved Current
+   Litters build is still outstanding — the site still shows an honest
+   holding page with no invented content. Could you please send the
+   approved Current Litters build or copy?
 
 ## Smaller wording decisions
 
@@ -64,18 +67,21 @@ other or where a decision is needed before we can proceed faithfully.
   Deli signup forms (forms currently validate fully but show an honest
   "connection pending" message instead of submitting anywhere).
 - Remaining photographs for the site (per-protein Deli photos, litter and
-  program photos); no stock or AI imagery is used.
+  program photos); no stock or AI imagery is used. This now also includes:
+  the opening photograph for The Doghouse Method™ page and the sixteen
+  stage-matched photographs for The First Eight Weeks page (both new pages
+  currently hold tasteful image positions ready, labelled only "Photograph to
+  be supplied by The Doghouse QLD").
 - Confirmation before connecting your domain and before anything goes live.
 - Effective dates for the Privacy Policy and Terms & Conditions, if you want
   them shown.
 
 ## Canva design questions (from the 31-page "Website Content" design, 2026-09-10)
 
-9. **Font names.** Your Canva design uses a teal script font for headings and
-   a warm brown serif for body copy, but the exact font names aren't visible
-   in view mode. The preview currently uses Parisienne (headings) and Lora
-   (body) as the closest matches. Could you confirm the exact font names so
-   the site matches precisely?
+9. **Font names.** RESOLVED 2026-09-10 by Charmaine's master design
+   instructions: major page headings use Corinthia Bold in bright logo teal;
+   all general website typography (body, nav, subheadings, buttons, forms,
+   footer) uses Aptos. The preview now follows this system.
 
 10. **Dog name spelling — Dottie vs Dotty.** Page 18 heads the profile
     "Dottie" but the body text says "Dotty"; page 19 (Milly) also says

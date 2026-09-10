@@ -1224,7 +1224,7 @@ export default function Faq() {
           )}
         </div>
         {filtered.length === 0 ? (
-          <p className="rounded-2xl border border-brand/15 bg-white p-8 text-center font-serif text-bark">
+          <p className="rounded-2xl border border-brand/15 bg-white p-8 text-center text-bark">
             No questions match your search. Try a different keyword or{' '}
             <Link to="/resources/contact-us" className={ilink}>
               contact us
@@ -1234,7 +1234,7 @@ export default function Faq() {
         ) : (
           filtered.map((cat, ci) => (
             <section key={cat.name} aria-label={cat.name} className="mb-10">
-              <h2 className="font-display text-3xl  text-brand">{cat.name}</h2>
+              <h2 className="font-bold text-3xl  text-bark">{cat.name}</h2>
               <div className="mt-2 border-t border-brand/10">
                 {cat.items.map((it, ii) => (
                   <FaqEntry key={ii} idPrefix={`faq-${ci}-${ii}`} q={it.q} a={it.a} />

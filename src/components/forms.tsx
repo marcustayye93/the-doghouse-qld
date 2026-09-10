@@ -176,8 +176,8 @@ export function FormShell({
   if (status === 'sent') {
     return (
       <div className="rounded-2xl border border-brand/20 bg-mist p-8 text-center" role="status">
-        <h2 className="font-display text-4xl  text-brand">{successHeading}</h2>
-        <p className="mx-auto mt-3 max-w-md leading-relaxed text-ink/80">{successMessage}</p>
+        <h2 className="font-bold text-4xl  text-bark">{successHeading}</h2>
+        <p className="mx-auto mt-3 max-w-md leading-relaxed text-bark/80">{successMessage}</p>
       </div>
     );
   }
@@ -189,7 +189,7 @@ export function FormShell({
         <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
         {children}
         {status === 'unconfigured' && (
-          <p role="alert" className="rounded-xl border border-honey/40 bg-honey/10 p-4 text-sm leading-relaxed text-ink">
+          <p role="alert" className="rounded-xl border border-honey/40 bg-honey/10 p-4 text-sm leading-relaxed text-bark">
             Our online form system is being connected. Please contact us via the{' '}
             <a href="/resources/contact-us" className="font-bold text-branddark underline">Contact Us</a>{' '}
             page in the meantime and we will help you directly.
@@ -258,7 +258,7 @@ export function Field({
   const error = useFieldError(name);
   const errorId = `${name}-error`;
   return (
-    <label className="block text-sm font-semibold text-ink">
+    <label className="block text-sm font-semibold text-bark">
       {label} {required && <span className="text-branddark" aria-hidden="true">*</span>}
       <input
         type={type}
@@ -291,7 +291,7 @@ export function TextArea({
   const error = useFieldError(name);
   const errorId = `${name}-error`;
   return (
-    <label className="block text-sm font-semibold text-ink">
+    <label className="block text-sm font-semibold text-bark">
       {label} {required && <span className="text-branddark" aria-hidden="true">*</span>}
       <textarea
         name={name}
@@ -321,7 +321,7 @@ export function SelectField({
   const error = useFieldError(name);
   const errorId = `${name}-error`;
   return (
-    <label className="block text-sm font-semibold text-ink">
+    <label className="block text-sm font-semibold text-bark">
       {label} {required && <span className="text-branddark" aria-hidden="true">*</span>}
       <select
         name={name}
@@ -358,7 +358,7 @@ export function CheckboxField({
   const errorId = `${name}-error`;
   return (
     <span className="block">
-      <label className="flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-ink">
+      <label className="flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-bark">
         <input
           type="checkbox"
           name={name}
@@ -390,7 +390,7 @@ export function RadioGroup({
   const error = useFieldError(name);
   const errorId = `${name}-error`;
   return (
-    <fieldset className="text-sm font-semibold text-ink" aria-describedby={error ? errorId : undefined}>
+    <fieldset className="text-sm font-semibold text-bark" aria-describedby={error ? errorId : undefined}>
       <legend>
         {legend} {required && <span className="text-branddark" aria-hidden="true">*</span>}
       </legend>

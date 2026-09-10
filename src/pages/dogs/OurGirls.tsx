@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { usePageMeta, CTAButton, PawDivider } from '../../components/ui';
+import { usePageMeta, ApplyNowButton, PawDivider } from '../../components/ui';
 import { PhotoPlaceholder } from './PhotoPlaceholder';
 
 interface GirlProfile {
@@ -415,7 +415,7 @@ function FactList({ facts }: { facts: [string, string][] }) {
       {facts.map(([label, value]) => (
         <div key={label} className="flex gap-2 text-[15px] leading-relaxed">
           <dt className="shrink-0 text-ink/60">{label}:</dt>
-          <dd className="font-serif text-bark">{value}</dd>
+          <dd className="text-bark">{value}</dd>
         </div>
       ))}
     </dl>
@@ -427,7 +427,7 @@ function PreviousPuppies({ name }: { name: string }) {
   return (
     <div className="mt-6">
       {/* OWNER: Replace each tile with a photograph of one of this girl's previous puppies when supplied. Five square images per current breeding girl. */}
-      <h4 className="font-display text-2xl text-brand">Previous Puppies</h4>
+      <h4 className="font-bold text-2xl text-bark">Previous Puppies</h4>
       <div className="mt-3 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {[1, 2, 3, 4, 5].map((n) => (
           <PhotoPlaceholder
@@ -451,9 +451,9 @@ function GirlProfileCard({ profile, flip }: { profile: GirlProfile; flip: boolea
           <PhotoPlaceholder label={`${girl}'s photograph to be supplied`} />
         </div>
         <div className={flip ? 'md:order-1' : ''}>
-          <h3 className="font-display text-4xl text-brand">{profile.name}</h3>
+          <h3 className="font-bold text-4xl text-bark">{profile.name}</h3>
           <FactList facts={profile.facts} />
-          <h4 className="mt-5 font-display text-2xl text-brand">{profile.personalityHeading}</h4>
+          <h4 className="mt-5 font-bold text-2xl text-bark">{profile.personalityHeading}</h4>
           <div className="prose-dog mt-2">
             {profile.personality.map((p, i) => (
               <p key={i}>{p}</p>
@@ -475,9 +475,9 @@ function FutureGirlCard({ profile, flip }: { profile: GirlProfile; flip: boolean
         <PhotoPlaceholder label={`${girl}'s photograph to be supplied`} />
       </div>
       <div className={flip ? 'md:order-1' : ''}>
-        <h3 className="font-display text-4xl text-brand">{profile.name}</h3>
+        <h3 className="font-bold text-4xl text-bark">{profile.name}</h3>
         <FactList facts={profile.facts} />
-        <h4 className="mt-5 font-display text-2xl text-brand">{profile.personalityHeading}</h4>
+        <h4 className="mt-5 font-bold text-2xl text-bark">{profile.personalityHeading}</h4>
         <div className="prose-dog mt-2">
           {profile.personality.map((p, i) => (
             <p key={i}>{p}</p>
@@ -497,7 +497,7 @@ export function RetiredGirlCard({ girl, flip }: { girl: RetiredGirl; flip: boole
         <PhotoPlaceholder label={`${name}'s photograph to be supplied`} />
       </div>
       <div className={flip ? 'md:order-1' : ''}>
-        <h3 className="font-display text-4xl text-brand">{girl.name}</h3>
+        <h3 className="font-bold text-4xl text-bark">{girl.name}</h3>
         <div className="prose-dog mt-3">
           {girl.story.map((p, i) => (
             <p key={i}>{p}</p>
@@ -521,7 +521,7 @@ export default function OurGirls() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-branddark">
               Our Dogs
             </p>
-            <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
+            <h1 className="font-display text-5xl font-bold leading-tight text-brand md:text-6xl">
               Our Girls
             </h1>
             <div className="prose-dog mt-5">
@@ -545,7 +545,7 @@ export default function OurGirls() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="font-display text-4xl  text-brand md:text-5xl">
+        <h2 className="font-bold text-4xl  text-bark md:text-5xl">
           Current Breeding Girls
         </h2>
         <div className="mt-10 space-y-14">
@@ -563,7 +563,7 @@ export default function OurGirls() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="font-display text-4xl  text-brand md:text-5xl">
+        <h2 className="font-bold text-4xl  text-bark md:text-5xl">
           Future Hopeful Breeding Girls
         </h2>
         <div className="prose-dog mt-5 max-w-3xl">
@@ -589,7 +589,7 @@ export default function OurGirls() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="font-display text-4xl  text-brand md:text-5xl">Retired Girls</h2>
+        <h2 className="font-bold text-4xl  text-bark md:text-5xl">Retired Girls</h2>
         <div className="mt-10 space-y-14">
           {retiredGirls.map((girl, i) => (
             <div key={girl.name}>
@@ -607,7 +607,7 @@ export default function OurGirls() {
       <section className="mx-auto max-w-6xl px-5 py-12 text-center">
         <PawDivider />
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <CTAButton to="/puppies/process-applying">Apply Now</CTAButton>
+          <ApplyNowButton />
           <Link
             to="/our-dogs/our-studs"
             className="font-semibold text-branddark underline decoration-brand/40 underline-offset-4 hover:decoration-brand"

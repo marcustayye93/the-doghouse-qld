@@ -17,10 +17,10 @@ export default function NotFound() {
     <main className="mx-auto max-w-6xl px-5 py-12 md:py-20">
       <div className="grid items-center gap-10 md:grid-cols-2">
         <div className="text-center md:text-left">
-          <h1 className="font-display text-5xl  text-brand md:text-6xl">
+          <h1 className="font-display text-5xl font-bold text-brand md:text-6xl">
             Oops... this page has wandered off!
           </h1>
-          <p className="mx-auto mt-5 max-w-md font-serif leading-relaxed text-bark md:mx-0">
+          <p className="mx-auto mt-5 max-w-md leading-relaxed text-bark md:mx-0">
             It looks like the page you&apos;re looking for isn&apos;t here. Don&apos;t worry,
             we&apos;ll help you find your way back. You can return to our homepage or use one
             of the links below to continue exploring The Doghouse QLD.
@@ -28,7 +28,7 @@ export default function NotFound() {
           <div className="mt-8">
             <CTAButton to="/">Return to Home</CTAButton>
           </div>
-          <h2 className="mt-10 font-display text-3xl  text-brand">
+          <h2 className="mt-10 font-bold text-3xl  text-bark">
             Looking for something?
           </h2>
           <ul className="mt-4 grid gap-2.5">

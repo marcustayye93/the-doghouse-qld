@@ -1,4 +1,4 @@
-import { CTAButton, ReadMore, usePageMeta } from '../../components/ui';
+import { ApplyNowButton, ReadMore, usePageMeta } from '../../components/ui';
 import { PhotoPlaceholder } from './PhotoPlaceholder';
 
 export default function GuardianHomes() {
@@ -15,7 +15,7 @@ export default function GuardianHomes() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-branddark">
               About Us
             </p>
-            <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
+            <h1 className="font-display text-5xl font-bold  leading-tight text-brand md:text-6xl">
               Guardian Homes
             </h1>
             <div className="prose-dog mt-5">
@@ -243,7 +243,7 @@ export default function GuardianHomes() {
           </p>
         </div>
         <div className="mt-6">
-          <CTAButton to="/about-us/guardian-homes/apply">Apply Now</CTAButton>
+          <ApplyNowButton to="/about-us/guardian-homes/apply" />
         </div>
       </section>
     </main>

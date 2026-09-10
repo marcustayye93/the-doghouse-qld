@@ -57,14 +57,14 @@ export default function AvailablePuppies() {
             <div className="mx-auto max-w-sm">
               <SquareImage src={asset("/images/photos/basket-pups.jpg")} alt="Basket of Cavoodle puppies" />
             </div>
-            <h3 className="!mt-6 font-display !text-4xl  text-brand">
+            <h3 className="!mt-6 font-bold !text-4xl  text-bark">
               No Puppies Currently Available
             </h3>
-            <p className="mx-auto mt-3 max-w-xl font-serif leading-relaxed text-bark">
+            <p className="mx-auto mt-3 max-w-xl leading-relaxed text-bark">
               We don&apos;t currently have any Doghouse puppies looking for their families, but
               there are always exciting things happening behind the scenes.
             </p>
-            <p className="mx-auto mt-3 max-w-xl font-serif leading-relaxed text-bark">
+            <p className="mx-auto mt-3 max-w-xl leading-relaxed text-bark">
               You can meet our Current Litters, see what we have planned for the months ahead, or
               join our free Master Waitlist to hear about future litters and puppy availability.
             </p>

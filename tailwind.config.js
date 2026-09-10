@@ -15,18 +15,29 @@ export default {
         mist: '#E9F5F3',
         honey: '#E9A23B',
         gold: '#A98A5B',
-        // Charmaine Canva estimates (visual only; confirm exact values with her):
-        cta: '#00B2C0', // bright teal pill-button fill
-        cocoa: '#5C3A1E', // dark chocolate brown (nav text, rules)
-        bark: '#8B5E34', // warm brown body copy
+        // Approved button fill (bright teal rounded-rectangle CTAs).
+        cta: '#00B2C0',
+        // Warm tan-chocolate brown: approved body/subheading/nav colour.
+        // Warm, tan-influenced, readable on white (per master spec section 9).
+        bark: '#8B5E34',
+        // Pale teal footer background, derived from the logo teal.
+        // Bark text on this passes WCAG AA (4.77:1); teal text does not, so
+        // footer copy stays bark.
+        paleteal: '#DCF1EF',
       },
       fontFamily: {
-        // NOTE: Parisienne is a stand-in for the exact script font in Charmaine's
-        // Canva design (the view-only link exposes no font metadata). Replace with
-        // her confirmed font name when she supplies it.
-        display: ['Parisienne', '"Snell Roundhand"', 'cursive'],
-        serif: ['Lora', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        // Approved major-heading font: Corinthia Bold, bright logo teal.
+        // Reserved for the principal page heading (and specifically approved
+        // major headings) ONLY. Never for subheadings or buttons.
+        display: ['Corinthia', '"Segoe UI"', 'cursive'],
+        // Approved general typography: Aptos for body, nav, subheadings,
+        // buttons, forms, footer and all informational text.
+        // Aptos is a Microsoft 365 font and is NOT on Google Fonts, so it is
+        // declared as a system stack: visitors with Microsoft 365 get Aptos
+        // (or Aptos Display); everyone else falls back to Segoe UI, its
+        // metric-compatible sibling, then system sans. A true Aptos webfont
+        // would require a licensed font file supplied by The Doghouse QLD.
+        sans: ['Aptos', '"Aptos Display"', '"Segoe UI"', 'system-ui', 'sans-serif'],
       },
     },
   },
