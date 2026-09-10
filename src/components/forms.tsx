@@ -176,7 +176,7 @@ export function FormShell({
   if (status === 'sent') {
     return (
       <div className="rounded-2xl border border-brand/20 bg-mist p-8 text-center" role="status">
-        <h2 className="font-display text-4xl font-bold text-deep">{successHeading}</h2>
+        <h2 className="font-display text-4xl  text-brand">{successHeading}</h2>
         <p className="mx-auto mt-3 max-w-md leading-relaxed text-ink/80">{successMessage}</p>
       </div>
     );
@@ -204,7 +204,7 @@ export function FormShell({
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="inline-flex items-center justify-center rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark disabled:opacity-60"
+          className="inline-flex items-center justify-center rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand disabled:opacity-60"
         >
           {status === 'sending' ? 'Sending...' : submitLabel}
         </button>

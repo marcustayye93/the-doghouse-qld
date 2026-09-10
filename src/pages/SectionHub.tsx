@@ -8,7 +8,7 @@ export default function SectionHub({ sectionPath }: { sectionPath: string }) {
   usePageMeta(section.label, `${section.label} - The Doghouse QLD`);
   return (
     <main className="mx-auto max-w-6xl px-5 py-10 md:py-14">
-      <h1 className="text-center font-display text-5xl font-bold text-deep md:text-6xl">
+      <h1 className="text-center font-display text-5xl  text-brand md:text-6xl">
         {section.label}
       </h1>
       <PawDivider />
@@ -19,7 +19,7 @@ export default function SectionHub({ sectionPath }: { sectionPath: string }) {
             to={child.path}
             className="group rounded-2xl border border-brand/10 bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
-            <h2 className="font-display text-3xl font-bold leading-snug text-deep group-hover:text-branddark">
+            <h2 className="font-display text-3xl  leading-snug text-brand group-hover:text-branddark">
               {child.label}
             </h2>
           </Link>

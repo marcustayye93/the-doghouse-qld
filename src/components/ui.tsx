@@ -99,7 +99,7 @@ export function PageHero({
               {eyebrow}
             </p>
           )}
-          <h1 className="font-display text-5xl font-bold leading-tight text-deep md:text-6xl">
+          <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
             {title}
           </h1>
           <div className="prose-dog mt-5">{intro}</div>
@@ -123,7 +123,7 @@ export function CTAButton({
   return (
     <Link
       to={to}
-      className={`inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${className}`}
     >
       {children}
       <span aria-hidden="true">›</span>

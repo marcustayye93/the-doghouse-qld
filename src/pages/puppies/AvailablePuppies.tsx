@@ -6,7 +6,7 @@ function AnchorCTA({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+      className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
       {children}
       <span aria-hidden="true">›</span>
@@ -57,14 +57,14 @@ export default function AvailablePuppies() {
             <div className="mx-auto max-w-sm">
               <SquareImage src={asset("/images/photos/basket-pups.jpg")} alt="Basket of Cavoodle puppies" />
             </div>
-            <h3 className="!mt-6 font-display !text-4xl font-bold text-deep">
+            <h3 className="!mt-6 font-display !text-4xl  text-brand">
               No Puppies Currently Available
             </h3>
-            <p className="mx-auto mt-3 max-w-xl leading-relaxed text-ink/80">
+            <p className="mx-auto mt-3 max-w-xl font-serif leading-relaxed text-bark">
               We don&apos;t currently have any Doghouse puppies looking for their families, but
               there are always exciting things happening behind the scenes.
             </p>
-            <p className="mx-auto mt-3 max-w-xl leading-relaxed text-ink/80">
+            <p className="mx-auto mt-3 max-w-xl font-serif leading-relaxed text-bark">
               You can meet our Current Litters, see what we have planned for the months ahead, or
               join our free Master Waitlist to hear about future litters and puppy availability.
             </p>

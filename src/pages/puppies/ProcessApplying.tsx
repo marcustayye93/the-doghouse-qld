@@ -16,7 +16,7 @@ function ApplyNowButton() {
   return (
     <a
       href="#doghouse-application"
-      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+      className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
       Apply Now
       <span aria-hidden="true">›</span>
@@ -28,7 +28,7 @@ function ApplyNowButton() {
 function FormSection({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div className="rounded-2xl border border-ink/10 bg-white p-6 shadow-sm md:p-8">
-      <h3 className="font-display text-3xl font-bold leading-snug text-deep">{title}</h3>
+      <h3 className="font-display text-3xl  leading-snug text-brand">{title}</h3>
       <div className="mt-5 grid gap-5">{children}</div>
     </div>
   );
@@ -653,7 +653,7 @@ export default function ProcessApplying() {
                 </FormSection>
 
                 <FormSection title="Before You Submit">
-                  <p className="text-sm leading-relaxed text-ink/80">
+                  <p className="font-serif text-sm leading-relaxed text-bark">
                     I understand that submitting a Doghouse Puppy Application does not guarantee
                     that I will be offered a puppy. I understand that The Doghouse QLD considers
                     the individual puppy, the family and the suitability of the match when placing

@@ -1224,7 +1224,7 @@ export default function Faq() {
           )}
         </div>
         {filtered.length === 0 ? (
-          <p className="rounded-2xl border border-brand/15 bg-white p-8 text-center text-ink/70">
+          <p className="rounded-2xl border border-brand/15 bg-white p-8 text-center font-serif text-bark">
             No questions match your search. Try a different keyword or{' '}
             <Link to="/resources/contact-us" className={ilink}>
               contact us
@@ -1234,7 +1234,7 @@ export default function Faq() {
         ) : (
           filtered.map((cat, ci) => (
             <section key={cat.name} aria-label={cat.name} className="mb-10">
-              <h2 className="font-display text-3xl font-bold text-deep">{cat.name}</h2>
+              <h2 className="font-display text-3xl  text-brand">{cat.name}</h2>
               <div className="mt-2 border-t border-brand/10">
                 {cat.items.map((it, ii) => (
                   <FaqEntry key={ii} idPrefix={`faq-${ci}-${ii}`} q={it.q} a={it.a} />
@@ -1254,7 +1254,7 @@ export default function Faq() {
             <p>
               <Link
                 to="/resources/contact-us"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
               >
                 Contact Us <span aria-hidden="true">›</span>
               </Link>

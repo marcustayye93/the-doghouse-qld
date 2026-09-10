@@ -12,11 +12,11 @@ import {
 } from '../../components/forms';
 
 function SectionHeading({ children }: { children: ReactNode }) {
-  return <h2 className="text-xl font-bold text-deep">{children}</h2>;
+  return <h2 className="font-display text-3xl text-brand">{children}</h2>;
 }
 
 function HelperText({ children }: { children: ReactNode }) {
-  return <p className="-mt-2 text-sm leading-relaxed text-ink/60">{children}</p>;
+  return <p className="-mt-2 font-serif text-sm leading-relaxed text-bark">{children}</p>;
 }
 
 /** Radio group with change callback, for the conditional pets question. */
@@ -92,7 +92,7 @@ export default function GuardianApplication() {
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-branddark">
           About Us
         </p>
-        <h1 className="font-display text-5xl font-bold leading-tight text-deep md:text-6xl">
+        <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
           Guardian Home Application
         </h1>
         <div className="prose-dog mt-5">
@@ -283,7 +283,7 @@ export default function GuardianApplication() {
                 new Guardian Home opportunities available.
               </span>
             </label>
-            <p className="text-sm leading-relaxed text-ink/60">
+            <p className="font-serif text-sm leading-relaxed text-bark">
               We respect your privacy. Information submitted through this form will be handled in
               accordance with our{' '}
               <Link to="/privacy-policy" className="font-semibold text-branddark underline">

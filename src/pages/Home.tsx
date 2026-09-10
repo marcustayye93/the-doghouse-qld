@@ -84,7 +84,7 @@ export default function Home() {
         <Gallery />
         <div className="mt-8 flex flex-col items-center text-center">
           <CTAButton to="/puppies/process-applying">Apply Now</CTAButton>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-gold">
+          <p className="mt-5 max-w-xl font-serif text-lg leading-relaxed text-bark">
             Start your journey to welcome a Doghouse Cavoodle puppy into your home.
           </p>
         </div>

@@ -391,7 +391,7 @@ function FactList({ facts }: { facts: [string, string][] }) {
       {facts.map(([label, value]) => (
         <div key={label} className="flex gap-2 text-[15px] leading-relaxed">
           <dt className="shrink-0 text-ink/60">{label}:</dt>
-          <dd className="text-ink">{value}</dd>
+          <dd className="font-serif text-bark">{value}</dd>
         </div>
       ))}
     </dl>
@@ -407,20 +407,20 @@ function StudProfileCard({ profile, flip }: { profile: StudProfile; flip: boolea
           <PhotoPlaceholder label={`${profile.name}'s photograph to be supplied`} />
         </div>
         <div className={flip ? 'md:order-1' : ''}>
-          <h3 className="text-2xl font-bold text-deep">{profile.name}</h3>
+          <h3 className="font-display text-4xl text-brand">{profile.name}</h3>
           <FactList facts={profile.facts} />
-          <h4 className="mt-5 text-lg font-bold text-deep">Genetic &amp; Coat Traits</h4>
+          <h4 className="mt-5 font-display text-2xl text-brand">Genetic &amp; Coat Traits</h4>
           <dl className="mt-2 space-y-1.5">
             {profile.traits.map(([label, value]) => (
               <div key={label} className="flex gap-2 text-[15px] leading-relaxed">
                 <dt className="shrink-0 text-ink/60">{label}:</dt>
-                <dd className="text-ink">{value}</dd>
+                <dd className="font-serif text-bark">{value}</dd>
               </div>
             ))}
           </dl>
           {profile.personalityPending ? null : (
             <>
-              <h4 className="mt-5 text-lg font-bold text-deep">{profile.personalityHeading}</h4>
+              <h4 className="mt-5 font-display text-2xl text-brand">{profile.personalityHeading}</h4>
               <div className="prose-dog mt-2">
                 {profile.personality.map((p, i) => (
                   <p key={i}>{p}</p>
@@ -442,7 +442,7 @@ export function RetiredBoyCard({ boy, flip }: { boy: RetiredBoy; flip: boolean }
         <PhotoPlaceholder label={`${boy.name}'s photograph to be supplied`} />
       </div>
       <div className={flip ? 'md:order-1' : ''}>
-        <h3 className="text-2xl font-bold text-deep">{boy.name}</h3>
+        <h3 className="font-display text-4xl text-brand">{boy.name}</h3>
         <div className="prose-dog mt-3">
           {boy.story.map((p, i) => (
             <p key={i}>{p}</p>
@@ -466,7 +466,7 @@ export default function OurStuds() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-branddark">
               Our Dogs
             </p>
-            <h1 className="font-display text-5xl font-bold leading-tight text-deep md:text-6xl">
+            <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
               Our Studs
             </h1>
             <div className="prose-dog mt-5">
@@ -498,7 +498,7 @@ export default function OurStuds() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="font-display text-4xl font-bold text-deep md:text-5xl">Current Studs</h2>
+        <h2 className="font-display text-4xl  text-brand md:text-5xl">Current Studs</h2>
         <div className="mt-10 space-y-14">
           {currentStuds.map((profile, i) => (
             <div key={profile.name}>
@@ -514,7 +514,7 @@ export default function OurStuds() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="font-display text-4xl font-bold text-deep md:text-5xl">
+        <h2 className="font-display text-4xl  text-brand md:text-5xl">
           Future Hopeful Studs
         </h2>
         <div className="prose-dog mt-5 max-w-3xl">
@@ -556,7 +556,7 @@ export default function OurStuds() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="font-display text-4xl font-bold text-deep md:text-5xl">
+        <h2 className="font-display text-4xl  text-brand md:text-5xl">
           Retired &amp; Legacy Boys
         </h2>
         <div className="mt-10 space-y-14">

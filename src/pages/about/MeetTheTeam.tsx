@@ -58,7 +58,7 @@ function Profile({ member, flip }: { member: TeamMember; flip: boolean }) {
         <PhotoPlaceholder />
       </div>
       <div className={flip ? 'md:order-1' : ''}>
-        <h2 className="font-display text-4xl font-bold leading-tight text-deep md:text-5xl">
+        <h2 className="font-display text-4xl  leading-tight text-brand md:text-5xl">
           {member.name}
         </h2>
         <p className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-branddark">
@@ -86,7 +86,7 @@ export default function MeetTheTeam() {
         <p className="mb-3 text-center text-xs font-bold uppercase tracking-[0.2em] text-branddark">
           About Us
         </p>
-        <h1 className="text-center font-display text-5xl font-bold leading-tight text-deep md:text-6xl">
+        <h1 className="text-center font-display text-5xl  leading-tight text-brand md:text-6xl">
           Meet the Team
         </h1>
         <div className="prose-dog mx-auto mt-5 max-w-3xl text-center">

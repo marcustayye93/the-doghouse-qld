@@ -26,7 +26,7 @@ function DesktopNav() {
               to={item.path}
               className={({ isActive }) =>
                 `block whitespace-nowrap rounded-lg px-3 py-2.5 text-[13px] font-semibold uppercase tracking-wide transition ${
-                  isActive ? 'text-branddark' : 'text-ink hover:text-branddark'
+                  isActive ? 'text-brand' : 'text-cocoa hover:text-brand'
                 }`
               }
             >
@@ -39,7 +39,7 @@ function DesktopNav() {
                     <li key={child.path}>
                       <Link
                         to={child.path}
-                        className="block px-5 py-2.5 text-sm text-ink transition hover:bg-mist hover:text-branddark"
+                        className="block px-5 py-2.5 text-sm text-cocoa transition hover:bg-mist hover:text-brand"
                       >
                         {child.label}
                       </Link>
@@ -68,7 +68,7 @@ function MobileNav({ onNavigate }: { onNavigate: () => void }) {
                   type="button"
                   onClick={() => setOpenSection((s) => (s === item.path ? null : item.path))}
                   aria-expanded={openSection === item.path}
-                  className="flex w-full items-center justify-between px-2 py-3.5 text-left text-sm font-bold uppercase tracking-wide text-ink"
+                  className="flex w-full items-center justify-between px-2 py-3.5 text-left text-sm font-bold uppercase tracking-wide text-cocoa"
                 >
                   {item.label}
                   <span
@@ -94,7 +94,7 @@ function MobileNav({ onNavigate }: { onNavigate: () => void }) {
                         <Link
                           to={child.path}
                           onClick={onNavigate}
-                          className="block py-2 text-sm text-ink/90"
+                          className="block py-2 text-sm text-cocoa/90"
                         >
                           {child.label}
                         </Link>
@@ -107,7 +107,7 @@ function MobileNav({ onNavigate }: { onNavigate: () => void }) {
               <Link
                 to={item.path}
                 onClick={onNavigate}
-                className="block px-2 py-3.5 text-sm font-bold uppercase tracking-wide text-ink"
+                className="block px-2 py-3.5 text-sm font-bold uppercase tracking-wide text-cocoa"
               >
                 {item.label}
               </Link>
@@ -131,13 +131,13 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-brand/10 bg-cream/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-y border-cocoa/25 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 md:px-6">
         <Logo />
         <DesktopNav />
         <button
           type="button"
-          className="rounded-lg p-2.5 text-ink hover:bg-mist lg:hidden"
+          className="rounded-lg p-2.5 text-cocoa hover:bg-mist lg:hidden"
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setMenuOpen((v) => !v)}
@@ -152,7 +152,7 @@ export function Header() {
         </button>
       </div>
       {menuOpen && (
-        <div className="max-h-[70vh] overflow-y-auto border-t border-brand/10 bg-cream px-4 pb-6 lg:hidden">
+        <div className="max-h-[70vh] overflow-y-auto border-t border-cocoa/20 bg-white px-4 pb-6 lg:hidden">
           <MobileNav onNavigate={() => setMenuOpen(false)} />
         </div>
       )}
@@ -217,25 +217,25 @@ function SocialIcons() {
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-16 bg-deep text-cream/90">
+    <footer className="mt-16 border-t border-cocoa/20 bg-white text-bark">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-2 lg:grid-cols-4 md:px-6">
         <div>
           <img src={asset("/images/logo.png")} alt="The Doghouse QLD" className="h-16 w-auto" />
-          <p className="mt-4 font-display text-2xl font-bold text-white">
+          <p className="mt-4 font-display text-3xl text-brand">
             Thoughtfully bred. Beautifully raised.
           </p>
           <p className="mt-2 text-sm leading-relaxed">
             Specialist multi-generational Cavoodle breeder in Queensland, Australia.
           </p>
-          <p className="mt-4 text-sm font-semibold text-white">The Doghouse QLD</p>
+          <p className="mt-4 text-sm font-semibold text-cocoa">The Doghouse QLD</p>
           <p className="text-sm">Caboolture, Queensland<br />Australia</p>
         </div>
         <nav aria-label="Explore">
-          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">Explore</h2>
+          <h2 className="font-display text-2xl text-brand">Explore</h2>
           <ul className="mt-4 grid gap-2.5">
             {exploreLinks.map((l) => (
               <li key={l.path}>
-                <Link to={l.path} className="text-sm transition hover:text-white hover:underline underline-offset-4">
+                <Link to={l.path} className="text-sm transition hover:text-brand hover:underline underline-offset-4">
                   {l.label}
                 </Link>
               </li>
@@ -243,11 +243,11 @@ export function Footer() {
           </ul>
         </nav>
         <nav aria-label="Helpful links">
-          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">Helpful Links</h2>
+          <h2 className="font-display text-2xl text-brand">Helpful Links</h2>
           <ul className="mt-4 grid gap-2.5">
             {helpfulLinks.map((l) => (
               <li key={l.path}>
-                <Link to={l.path} className="text-sm transition hover:text-white hover:underline underline-offset-4">
+                <Link to={l.path} className="text-sm transition hover:text-brand hover:underline underline-offset-4">
                   {l.label}
                 </Link>
               </li>
@@ -255,7 +255,7 @@ export function Footer() {
           </ul>
         </nav>
         <div>
-          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">
+          <h2 className="font-display text-2xl text-brand">
             Follow The Doghouse
           </h2>
           <div className="mt-4">
@@ -263,24 +263,24 @@ export function Footer() {
           </div>
           <Link
             to="/resources/contact-us"
-            className="mt-6 inline-block rounded-xl bg-brand px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-branddark"
+            className="mt-6 inline-block rounded-full bg-cta px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-brand"
           >
             Contact Us
           </Link>
         </div>
       </div>
-      <div className="border-t border-white/10">
+      <div className="border-t border-cocoa/15">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-xs md:flex-row md:px-6">
           <p>© {year} The Doghouse QLD. All rights reserved.</p>
           <div>
-            <p className="mb-2 text-center text-[11px] font-bold uppercase tracking-[0.18em] text-cream/70 md:text-right">
+            <p className="mb-2 text-center font-display text-xl text-brand md:text-right">
               Legal
             </p>
             <div className="flex gap-5">
-              <Link to="/privacy-policy" className="transition hover:text-white hover:underline underline-offset-4">
+              <Link to="/privacy-policy" className="transition hover:text-brand hover:underline underline-offset-4">
                 Privacy Policy
               </Link>
-              <Link to="/terms-and-conditions" className="transition hover:text-white hover:underline underline-offset-4">
+              <Link to="/terms-and-conditions" className="transition hover:text-brand hover:underline underline-offset-4">
                 Terms &amp; Conditions
               </Link>
             </div>

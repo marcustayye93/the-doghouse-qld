@@ -68,3 +68,32 @@ other or where a decision is needed before we can proceed faithfully.
 - Confirmation before connecting your domain and before anything goes live.
 - Effective dates for the Privacy Policy and Terms & Conditions, if you want
   them shown.
+
+## Canva design questions (from the 31-page "Website Content" design, 2026-09-10)
+
+9. **Font names.** Your Canva design uses a teal script font for headings and
+   a warm brown serif for body copy, but the exact font names aren't visible
+   in view mode. The preview currently uses Parisienne (headings) and Lora
+   (body) as the closest matches. Could you confirm the exact font names so
+   the site matches precisely?
+
+10. **Dog name spelling — Dottie vs Dotty.** Page 18 heads the profile
+    "Dottie" but the body text says "Dotty"; page 19 (Milly) also says
+    "Dotty thrives on human companionship", which looks like a copy-paste
+    slip. What is the correct spelling, and what should Milly's paragraph
+    say?
+
+11. **Stud pages — Harry duplicated.** Pages 28-31 are four identical copies
+    of "Meet Harry". Was there meant to be a separate "Meet Billy" page
+    and/or a "Benefits of the Theodore Line" page? Could you send the
+    intended content for the stud section?
+
+12. **Nav labels.** The two header variants differ: one says "About
+    Cavoodles" and includes "FAQ", the other says "Cavoodles" with no FAQ
+    item and a slightly different order. Which nav labels and order should
+    the site use?
+
+13. **Subhead style on Cavoodle pages.** Most subheads are teal script, but
+    on the About Cavoodles pages some ("Size and Generations:", "Shedding
+    and Allergy Friendliness:", etc.) are teal in a plain rounded sans.
+    Should all subheads be script, or is the mix intentional?

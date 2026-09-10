@@ -32,7 +32,7 @@ export function CavoodleHero({
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-branddark">
             Cavoodles
           </p>
-          <h1 className="font-display text-5xl font-bold leading-tight text-deep md:text-6xl">
+          <h1 className="font-display text-5xl  leading-tight text-brand md:text-6xl">
             {title}
           </h1>
           <div className="prose-dog mt-5">{intro}</div>

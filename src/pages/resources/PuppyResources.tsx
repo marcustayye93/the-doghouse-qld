@@ -10,8 +10,8 @@ function ResourceCard({ to, title, text }: { to: string; title: string; text: st
       to={to}
       className="group rounded-2xl border border-brand/10 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
-      <h3 className="!mt-0 text-xl font-bold text-deep group-hover:text-branddark">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-ink/80">{text}</p>
+      <h3 className="!mt-0 font-display text-3xl text-brand group-hover:text-branddark">{title}</h3>
+      <p className="mt-2 font-serif text-sm leading-relaxed text-bark">{text}</p>
     </Link>
   );
 }

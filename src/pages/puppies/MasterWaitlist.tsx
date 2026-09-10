@@ -9,7 +9,7 @@ function AnchorCTA({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+      className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
       {children}
       <span aria-hidden="true">›</span>
@@ -22,7 +22,7 @@ function ScrollCTA({ to, children }: { to: string; children: ReactNode }) {
   return (
     <a
       href={to}
-      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+      className="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
       {children}
       <span aria-hidden="true">›</span>
@@ -164,7 +164,7 @@ export default function MasterWaitlist() {
                 />
               </FormShell>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-ink/70">
+            <p className="mt-4 font-serif text-sm leading-relaxed text-bark">
               We respect your privacy. Your information will be handled in accordance with our{' '}
               <Link
                 to="/privacy-policy"
@@ -275,7 +275,7 @@ export default function MasterWaitlist() {
                 successHeading="Thank You"
                 successMessage="Thank you for your interest in our Doghouse puppies. We've received your Expression of Interest and will be in touch so we can continue the conversation. Please remember that submitting an Expression of Interest does not reserve or allocate a puppy."
               >
-                <h3 className="text-base font-bold text-deep">Your Details</h3>
+                <h3 className="font-display text-3xl text-brand">Your Details</h3>
                 <Field label="Full Name" name="full_name" type="text" required autoComplete="name" />
                 <Field label="Email Address" name="email" type="email" required autoComplete="email" />
                 <Field label="Mobile Number" name="mobile" type="tel" required autoComplete="tel" />

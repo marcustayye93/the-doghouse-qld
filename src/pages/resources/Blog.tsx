@@ -188,7 +188,7 @@ export default function Blog() {
                     : 'border-brand/15 bg-white hover:border-brand/40'
                 }`}
               >
-                <h3 className="font-display text-2xl font-bold text-deep">{cat.name}</h3>
+                <h3 className="font-display text-2xl  text-brand">{cat.name}</h3>
                 {cat.description.map((d, i) => (
                   <p key={i} className="mt-2 text-sm leading-relaxed text-ink/75">
                     {d}
@@ -230,10 +230,10 @@ export default function Blog() {
         <div className="mt-6">
           {filtered.length === 0 ? (
             <div className="rounded-2xl border border-brand/10 bg-white p-8 text-center shadow-sm">
-              <h3 className="font-display text-2xl font-bold text-deep">
+              <h3 className="font-display text-2xl  text-brand">
                 Our first articles are on the way.
               </h3>
-              <p className="mx-auto mt-2 max-w-xl text-ink/70">
+              <p className="mx-auto mt-2 max-w-xl font-serif text-bark">
                 We&apos;re preparing our first articles and videos now and will publish them here,
                 newest first, as they are ready. Check back soon.
               </p>
@@ -256,7 +256,7 @@ export default function Blog() {
                     <p className="text-xs font-bold uppercase tracking-wider text-branddark">
                       {post.category} &middot; {post.date}
                     </p>
-                    <h3 className="mt-2 font-display text-2xl font-bold text-deep">
+                    <h3 className="mt-2 font-display text-2xl  text-brand">
                       {post.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-ink/75">{post.excerpt}</p>

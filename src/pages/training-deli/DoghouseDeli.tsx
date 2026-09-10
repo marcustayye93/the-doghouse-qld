@@ -260,7 +260,7 @@ export default function DoghouseDeli() {
             <p className="mt-6">
               <a
                 href="#deli-signup"
-                className="inline-flex items-center justify-center rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark"
+                className="inline-flex items-center justify-center rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand"
               >
                 Join the Doghouse Deli List
               </a>
@@ -828,9 +828,9 @@ export default function DoghouseDeli() {
                 Connect via siteConfig.mailingLists.doghouseDeli when the mailing provider is
                 chosen. Do not invent the provider.
               */}
-              <h2 className="!mt-0 font-display">Join the Doghouse Deli List</h2>
-              <p className="font-bold">Love the sound of Doghouse Deli?</p>
-              <p>
+              <h2 className="!mt-0 font-display text-brand">Join the Doghouse Deli List</h2>
+              <p className="font-serif font-bold text-bark">Love the sound of Doghouse Deli?</p>
+              <p className="font-serif text-bark">
                 Join our email list to hear about Doghouse Deli news, new treat boxes, product
                 launches and other Deli updates.
               </p>
@@ -894,7 +894,7 @@ export default function DoghouseDeli() {
                     name="consent"
                     label="Yes, I'd like to receive Doghouse Deli news, product updates and offers by email."
                   />
-                  <p className="text-sm leading-relaxed text-ink/70">
+                  <p className="font-serif text-sm leading-relaxed text-bark">
                     We respect your privacy. Your information will be handled in accordance with
                     our{' '}
                     <Link to="/privacy-policy" className={ilink}>

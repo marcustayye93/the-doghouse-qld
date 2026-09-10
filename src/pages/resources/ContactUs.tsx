@@ -34,8 +34,8 @@ function LinkCard({ to, title, blurb }: { to: string; title: string; blurb: stri
       to={to}
       className="block rounded-2xl border border-brand/15 bg-white p-5 shadow-sm transition hover:border-brand/40 hover:shadow"
     >
-      <h3 className="!mt-0 text-lg font-bold text-deep">{title}</h3>
-      <p className="mt-1 text-sm leading-relaxed text-ink/70">{blurb}</p>
+      <h3 className="!mt-0 font-display text-3xl text-brand">{title}</h3>
+      <p className="mt-1 font-serif text-sm leading-relaxed text-bark">{blurb}</p>
     </Link>
   );
 }
@@ -122,8 +122,8 @@ export default function ContactUs() {
 
       <section id="contact-form" className="mx-auto max-w-2xl scroll-mt-28 px-5 pb-16">
         <div className="rounded-2xl border border-brand/15 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="!mt-0 font-display text-4xl font-bold text-deep">Send Us a Message</h2>
-          <p className="mt-3 leading-relaxed text-ink/80">
+          <h2 className="!mt-0 font-display text-4xl  text-brand">Send Us a Message</h2>
+          <p className="mt-3 font-serif leading-relaxed text-bark">
             Have a question or would like to get in touch? Send us a message below and we&apos;ll
             get back to you as soon as we can.
           </p>
@@ -164,7 +164,7 @@ export default function ContactUs() {
                 rows={6}
                 placeholder="Tell us a little about how we can help."
               />
-              <p className="text-sm leading-relaxed text-ink/70">
+              <p className="font-serif text-sm leading-relaxed text-bark">
                 We respect your privacy. Information submitted through this form will be handled in
                 accordance with our{' '}
                 <Link to="/privacy-policy" className={ilink}>
@@ -362,7 +362,7 @@ export default function ContactUs() {
           <p>
             <a
               href="#contact-form"
-              className="inline-flex items-center justify-center rounded-xl bg-brand px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-branddark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-full bg-cta px-8 py-3.5 text-base font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
             >
               Send us a message
             </a>

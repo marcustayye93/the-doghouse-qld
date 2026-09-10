@@ -75,17 +75,17 @@ export default function PlannedLitters() {
                 alt="Basket of Cavoodle puppies"
               />
             </div>
-            <h3 className="!mt-6 font-display !text-4xl font-bold text-deep">
+            <h3 className="!mt-6 font-display !text-4xl  text-brand">
               More Litters Coming in the Future
             </h3>
-            <p className="mx-auto mt-3 max-w-xl leading-relaxed text-ink/80">
+            <p className="mx-auto mt-3 max-w-xl font-serif leading-relaxed text-bark">
               We don&apos;t currently have any planned or upcoming litters ready to announce.
             </p>
-            <p className="mx-auto mt-3 max-w-xl leading-relaxed text-ink/80">
+            <p className="mx-auto mt-3 max-w-xl font-serif leading-relaxed text-bark">
               Our breeding plans are made thoughtfully and sometimes we prefer to wait until we
               are comfortable with a pairing or pregnancy before sharing the details.
             </p>
-            <p className="mx-auto mt-3 max-w-xl leading-relaxed text-ink/80">
+            <p className="mx-auto mt-3 max-w-xl font-serif leading-relaxed text-bark">
               You can join our free Master Waitlist to stay connected and hear about future litter
               announcements and puppy availability.
             </p>
